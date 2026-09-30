@@ -1,10 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d060"/>
+      <stop offset="45%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#8a7018"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#e8c547"/>
       <stop offset="100%" stop-color="#a6851f"/>
     </linearGradient>
   </defs>
-  <circle cx="50" cy="50" r="46" fill="#0a0a0a" stroke="url(#g)" stroke-width="3"/>
-  <text x="50" y="64" text-anchor="middle" font-size="42">👑</text>
+  <!-- Outer ring -->
+  <circle cx="60" cy="62" r="52" fill="#0a0a0a" stroke="url(#gold)" stroke-width="3"/>
+  <circle cx="60" cy="62" r="46" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.45"/>
+  <!-- Crown -->
+  <path d="M32 48 L40 28 L50 42 L60 22 L70 42 L80 28 L88 48 Z" fill="url(#gold)" stroke="#f0d060" stroke-width="0.8"/>
+  <rect x="32" y="48" width="56" height="7" rx="1.5" fill="url(#goldSoft)"/>
+  <circle cx="40" cy="28" r="3" fill="#f0d060"/>
+  <circle cx="60" cy="22" r="3.5" fill="#f0d060"/>
+  <circle cx="80" cy="28" r="3" fill="#f0d060"/>
+  <!-- Scissors stylized (below crown) -->
+  <g stroke="url(#gold)" stroke-width="2.2" fill="none" stroke-linecap="round">
+    <path d="M42 72 Q50 68 58 78"/>
+    <path d="M78 72 Q70 68 62 78"/>
+    <circle cx="40" cy="70" r="5"/>
+    <circle cx="80" cy="70" r="5"/>
+    <path d="M58 78 L60 92"/>
+    <path d="M62 78 L60 92"/>
+  </g>
+  <!-- Small diamond accent -->
+  <path d="M60 98 L63 102 L60 106 L57 102 Z" fill="#e8c547"/>
 </svg>
