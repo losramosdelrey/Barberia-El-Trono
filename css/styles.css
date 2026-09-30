@@ -39,13 +39,14 @@ ul{list-style:none}
 .header{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 0;transition:var(--tr);background:transparent}
 .header.scrolled{background:rgba(10,10,10,.95);backdrop-filter:blur(12px);box-shadow:0 4px 30px rgba(0,0,0,.4);padding:10px 0}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-img{width:42px;height:42px;object-fit:contain;border-radius:50%;border:1.5px solid var(--gold);background:#0a0a0a;flex-shrink:0}
-.logo-text{font-family:var(--font-script),cursive;font-weight:700;font-size:2rem;line-height:1;letter-spacing:0.5px;background:linear-gradient(135deg,var(--gold-l),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:var(--gold)}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-img{width:64px;height:64px;object-fit:contain;border-radius:0;flex-shrink:0;background:transparent;filter:drop-shadow(0 0 1px #c9a227)}
+.logo-text{font-family:var(--font-script),cursive;font-weight:700;font-size:2.15rem;line-height:1;letter-spacing:1px;background:linear-gradient(135deg,var(--gold-l),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:var(--gold);-webkit-text-stroke:0.3px rgba(201,162,39,.25)}
 .logo-icon{display:none}
 @media(max-width:480px){
-  .logo-img{width:36px;height:36px}
-  .logo-text{font-size:1.65rem}
+  .logo-img{width:52px;height:52px}
+  .logo-text{font-size:1.6rem}
+  .logo{gap:8px}
 }
 .nav-menu{display:flex;gap:28px;align-items:center}
 .nav-link{font-size:.88rem;font-weight:500;color:var(--muted);position:relative}
