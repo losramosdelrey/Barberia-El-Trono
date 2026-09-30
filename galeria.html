@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería | El Trono Barbería</title>
+  <meta name="description" content="Galería de cortes, diseños y trabajos de Barbería El Trono.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#c9a227">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/install.css">
+</head>
+<body>
+  <header class="header scrolled" id="header">
+    <nav class="nav container">
+      <a href="inicio.html" class="logo"><img src="images/logos/logo-mark.png" alt="El Trono" class="logo-img"><span class="logo-text">El Trono</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="inicio.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+        <li><a href="servicios.html" class="nav-link" data-i18n="nav_services">Servicios</a></li>
+        <li><a href="tienda.html" class="nav-link" data-i18n="nav_shop">Tienda</a></li>
+        <li><a href="galeria.html" class="nav-link active" data-i18n="nav_gallery">Galería</a></li>
+        <li><a href="nosotros.html" class="nav-link" data-i18n="nav_about">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="es" title="Español"><img src="images/flags/es.svg" alt="ES"></button>
+          <button class="lang-btn" data-lang="en" title="English"><img src="images/flags/en.svg" alt="EN"></button>
+        </div>
+        <a href="https://wa.me/5354293791?text=Hola%20El%20Trono" class="btn btn-gold nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> <span data-i18n="nav_book">Reservar</span></a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag" data-i18n="gallery_tag">Galería</span>
+      <h1><span data-i18n="gallery_title">Nuestros</span> <span class="gold" data-i18n="gallery_title_gold">trabajos</span></h1>
+      <p class="section-desc" style="margin:12px auto 0;max-width:560px" data-i18n="gallery_desc">Resultados reales de cortes y transformaciones.</p>
+    </div>
+  </div>
+
+  <section class="gallery section">
+    <div class="container">
+      <div class="gallery-grid">
+        <div class="gallery-item large">
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80" alt="Fade">
+          <div class="gallery-overlay"><span data-i18n="gallery_fade">Corte Fade</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&q=80" alt="Barba">
+          <div class="gallery-overlay"><span data-i18n="gallery_beard">Barba diseñada</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80" alt="Ambiente">
+          <div class="gallery-overlay"><span data-i18n="gallery_ambiance">Ambiente El Trono</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80" alt="Clásico">
+          <div class="gallery-overlay"><span data-i18n="gallery_classic">Estilo clásico</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=600&q=80" alt="Herramientas">
+          <div class="gallery-overlay"><span data-i18n="gallery_tools">Herramientas premium</span></div>
+        </div>
+        <div class="gallery-item large">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80" alt="Detalle">
+          <div class="gallery-overlay"><span data-i18n="gallery_detail">Detalle profesional</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="social-bar">
+    <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="inicio.html" class="logo"><img src="images/logos/logo-mark.png" alt="El Trono" class="logo-img"><span class="logo-text">El Trono</span></a>
+          <p data-i18n="footer_desc">Barbería y salón de belleza masculino.</p>
+          <div class="socials">
+            <a href="https://facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer_nav">Navegación</h4>
+          <ul>
+            <li><a href="inicio.html" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+            <li><a href="tienda.html" data-i18n="nav_shop">Tienda</a></li>
+            <li><a href="galeria.html" data-i18n="nav_gallery">Galería</a></li>
+            <li><a href="nosotros.html" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer_services">Servicios</h4>
+          <ul>
+            <li><a href="servicios.html" data-i18n="service_corte">Cortes</a></li>
+            <li><a href="servicios.html" data-i18n="service_afeitado">Afeitado</a></li>
+            <li><a href="tienda.html" data-i18n="nav_shop">Productos</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-i18n="footer_contact">Contacto</h4>
+          <p><i class="fas fa-phone"></i> +53 54293791</p>
+          <p><i class="fas fa-map-marker-alt"></i> Cuba</p>
+          <a href="https://wa.me/5354293791" class="btn btn-outline btn-sm" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">© 2025 Barbería El Trono.</p>
+        <div class="footer-legal"><a href="#" data-i18n="footer_terms">Términos</a><a href="#" data-i18n="footer_privacy">Privacidad</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-btns float-desktop">
+    <a href="mailto:info@eltrono.cu" class="float-btn float-email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/5354293791" class="float-btn float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <div class="float-btns float-mobile">
+    <a href="tel:+5354293791" class="float-btn float-call" aria-label="Llamar"><i class="fas fa-phone-alt"></i></a>
+    <button type="button" class="float-btn float-app" onclick="elTronoInstall&&elTronoInstall()"><i class="fas fa-download"></i> <span data-i18n="float_app">App</span></button>
+    <a href="https://wa.me/5354293791" class="float-btn float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/install.js"></script>
+</body>
+</html>

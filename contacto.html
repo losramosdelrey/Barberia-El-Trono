@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | El Trono Barbería</title>
+  <meta name="description" content="Contacta Barbería El Trono. Reserva por WhatsApp. Ubicación en Cuba.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#c9a227">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/install.css">
+</head>
+<body>
+  <header class="header scrolled" id="header">
+    <nav class="nav container">
+      <a href="inicio.html" class="logo"><img src="images/logos/logo-mark.png" alt="El Trono" class="logo-img"><span class="logo-text">El Trono</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="inicio.html" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+        <li><a href="servicios.html" class="nav-link" data-i18n="nav_services">Servicios</a></li>
+        <li><a href="tienda.html" class="nav-link" data-i18n="nav_shop">Tienda</a></li>
+        <li><a href="galeria.html" class="nav-link" data-i18n="nav_gallery">Galería</a></li>
+        <li><a href="nosotros.html" class="nav-link" data-i18n="nav_about">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav-link active" data-i18n="nav_contact">Contacto</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="es" title="Español"><img src="images/flags/es.svg" alt="ES"></button>
+          <button class="lang-btn" data-lang="en" title="English"><img src="images/flags/en.svg" alt="EN"></button>
+        </div>
+        <a href="https://wa.me/5354293791?text=Hola%20El%20Trono" class="btn btn-gold nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> <span data-i18n="nav_book">Reservar</span></a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-tag" data-i18n="contact_tag">Contacto</span>
+      <h1><span data-i18n="contact_title">Visítanos o</span> <span class="gold" data-i18n="contact_title_gold">reserva tu cita</span></h1>
+    </div>
+  </div>
+
+  <section class="contact section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4 data-i18n="contact_location">Ubicación</h4>
+              <p data-i18n="contact_location_txt" data-i18n-html>Barbería El Trono<br>Salón de belleza masculino<br>Cuba</p>
+              <a href="https://www.google.com/maps?q=22.421887,-83.701554" target="_blank" rel="noopener" class="map-link" data-i18n="contact_maps">Ver en Google Maps →</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h4 data-i18n="contact_phone">Teléfono / Móvil</h4>
+              <p><a href="tel:+5354293791">+53 54293791</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <h4 data-i18n="contact_wa">WhatsApp</h4>
+              <p data-i18n="contact_wa_txt">Reservas y consultas rápidas</p>
+              <a href="https://wa.me/5354293791?text=Hola%20El%20Trono,%20quiero%20reservar" class="btn btn-gold btn-sm" target="_blank" data-i18n="contact_wa_btn">Escribir por WhatsApp</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4 data-i18n="contact_hours">Horarios</h4>
+              <p>Lunes a Sábado: 9:00 – 19:00<br>Domingo: consultar</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <h3 data-i18n="contact_form_title">Envíanos un mensaje</h3>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group"><input type="text" name="name" data-i18n-placeholder="contact_name" placeholder="Tu nombre" required></div>
+            <div class="form-group"><input type="tel" name="phone" data-i18n-placeholder="contact_phone_ph" placeholder="Teléfono / WhatsApp" required></div>
+            <div class="form-group">
+              <select name="service" required>
+                <option value="" data-i18n="contact_service">Servicio de interés</option>
+                <option value="corte">Corte de cabello</option>
+                <option value="peinado">Peinado</option>
+                <option value="afeitado">Afeitado / Barba</option>
+                <option value="fibra">Fibra capilar</option>
+                <option value="masaje">Masaje</option>
+                <option value="cejas">Cejas / Exfoliación</option>
+                <option value="otro">Otro / Consulta</option>
+              </select>
+            </div>
+            <div class="form-group"><textarea name="message" rows="4" data-i18n-placeholder="contact_msg" placeholder="Mensaje (opcional)"></textarea></div>
+            <button type="submit" class="btn btn-gold btn-full"><i class="fab fa-whatsapp"></i> <span data-i18n="contact_send">Enviar por WhatsApp</span></button>
+          </form>
+          <div class="map-embed">
+            <iframe src="https://maps.google.com/maps?q=22.421887,-83.701554&z=15&output=embed" width="100%" height="220" style="border:0;border-radius:12px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="social-bar">
+    <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="inicio.html" class="logo"><img src="images/logos/logo-mark.png" alt="El Trono" class="logo-img"><span class="logo-text">El Trono</span></a>
+          <p data-i18n="footer_desc">Barbería y salón de belleza masculino.</p>
+          <div class="socials">
+            <a href="https://facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer_nav">Navegación</h4>
+          <ul>
+            <li><a href="inicio.html" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+            <li><a href="tienda.html" data-i18n="nav_shop">Tienda</a></li>
+            <li><a href="galeria.html" data-i18n="nav_gallery">Galería</a></li>
+            <li><a href="nosotros.html" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer_services">Servicios</h4>
+          <ul>
+            <li><a href="servicios.html" data-i18n="service_corte">Cortes</a></li>
+            <li><a href="servicios.html" data-i18n="service_afeitado">Afeitado</a></li>
+            <li><a href="tienda.html" data-i18n="nav_shop">Productos</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 data-i18n="footer_contact">Contacto</h4>
+          <p><i class="fas fa-phone"></i> +53 54293791</p>
+          <p><i class="fas fa-map-marker-alt"></i> Cuba</p>
+          <a href="https://wa.me/5354293791" class="btn btn-outline btn-sm" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer_copy">© 2025 Barbería El Trono.</p>
+        <div class="footer-legal"><a href="#" data-i18n="footer_terms">Términos</a><a href="#" data-i18n="footer_privacy">Privacidad</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="float-btns float-desktop">
+    <a href="mailto:info@eltrono.cu" class="float-btn float-email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/5354293791" class="float-btn float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <div class="float-btns float-mobile">
+    <a href="tel:+5354293791" class="float-btn float-call" aria-label="Llamar"><i class="fas fa-phone-alt"></i></a>
+    <button type="button" class="float-btn float-app" onclick="elTronoInstall&&elTronoInstall()"><i class="fas fa-download"></i> <span data-i18n="float_app">App</span></button>
+    <a href="https://wa.me/5354293791" class="float-btn float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/install.js"></script>
+</body>
+</html>
