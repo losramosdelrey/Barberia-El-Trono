@@ -17,7 +17,8 @@ el-trono/
 │   ├── styles.css
 │   └── install.css
 ├── js/
-│   ├── data.js             → datos compartidos
+│   ├── precios.js          → ★ PRECIOS de servicios y tienda (editar aquí)
+│   ├── data.js             → datos compartidos (textos, imágenes, contacto)
 │   ├── i18n.js             → ES / EN
 │   ├── main.js
 │   ├── install.js          → PWA install

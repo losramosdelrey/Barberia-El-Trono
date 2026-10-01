@@ -1,14 +1,7 @@
 /**
  * El Trono — Datos compartidos (servicios, tienda, contacto, redes)
  *
- * ┌─ CÓMO CAMBIAR LOS PRECIOS ──────────────────────────────────────────────┐
- * │ SERVICIOS  → busca  services:  y cambia el número  price  de cada línea │
- * │              (ej.  price: 150  se mostrará como  150.00 CUP).           │
- * │ TIENDA     → busca  products:  y cambia  usd  y/o  cup  de cada artículo│
- * │              (ej.  usd: 15, cup: 11250  →  $15 USD – 11.250 CUP).       │
- * │              Si un artículo solo tiene un precio, borra la otra línea.  │
- * │ Guarda el archivo y recarga la página. No hay que tocar ningún HTML.    │
- * └─────────────────────────────────────────────────────────────────────────┘
+ * ► LOS PRECIOS NO SE EDITAN AQUÍ: están en  js/precios.js
  */
 const EL_TRONO = {
   contact: {
@@ -31,30 +24,27 @@ const EL_TRONO = {
     instagram: ''   // ← pega aquí la dirección de Instagram
   },
   /**
-   * SERVICIOS — cada servicio tiene su lista de derivados con su precio (CUP).
-   *   price: número  → se muestra con 2 decimales, ej. 0 → "0.00 CUP"
-   *   price: 'texto' → se muestra tal cual, ej. 'Desde 500 CUP' o 'Consultar'
-   * `es` / `en` son los nombres que ve el cliente en cada idioma.
+   * SERVICIOS — nombres (es/en). Los PRECIOS se editan en js/precios.js
    */
   services: [
     {
       id: 'corte',
       icon: 'fa-cut',
       items: [
-        { es: 'A máquina',            en: 'Machine cut',     price: 0 },
-        { es: 'Tradicional',          en: 'Traditional cut', price: 0 },
-        { es: 'De diseño',            en: 'Designer cut',    price: 0 },
-        { es: 'Estilo personalizado', en: 'Custom style',    price: 0 }
+        { id: 'corte_maquina', es: 'A máquina', en: 'Machine cut' },
+        { id: 'corte_tradicional', es: 'Tradicional', en: 'Traditional cut' },
+        { id: 'corte_diseno', es: 'De diseño', en: 'Designer cut' },
+        { id: 'corte_personalizado', es: 'Estilo personalizado', en: 'Custom style' }
       ]
     },
     {
       id: 'peinados',
       icon: 'comb',
       items: [
-        { es: 'Peinados sencillos',   en: 'Simple hairstyles',     price: 0 },
-        { es: 'Estilos modernos',     en: 'Modern styles',         price: 0 },
-        { es: 'Acabado profesional',  en: 'Professional finish',   price: 0 },
-        { es: 'Productos premium',    en: 'Premium products',      price: 0 }
+        { id: 'peinados_sencillos', es: 'Peinados sencillos', en: 'Simple hairstyles' },
+        { id: 'peinados_modernos', es: 'Estilos modernos', en: 'Modern styles' },
+        { id: 'peinados_acabado', es: 'Acabado profesional', en: 'Professional finish' },
+        { id: 'peinados_premium', es: 'Productos premium', en: 'Premium products' }
       ]
     },
     {
@@ -62,10 +52,10 @@ const EL_TRONO = {
       icon: 'razor',
       featured: true,
       items: [
-        { es: 'Tradicional con navaja', en: 'Traditional straight-razor shave', price: 0 },
-        { es: 'Rasurado completo',      en: 'Full shave',                       price: 0 },
-        { es: 'Diseño de barbas',       en: 'Beard design',                     price: 0 },
-        { es: 'Toalla caliente',        en: 'Hot towel',                        price: 0 }
+        { id: 'afeitado_navaja', es: 'Tradicional con navaja', en: 'Traditional straight-razor shave' },
+        { id: 'afeitado_completo', es: 'Rasurado completo', en: 'Full shave' },
+        { id: 'afeitado_barbas', es: 'Diseño de barbas', en: 'Beard design' },
+        { id: 'afeitado_toalla', es: 'Toalla caliente', en: 'Hot towel' }
       ]
     },
     {
@@ -73,49 +63,48 @@ const EL_TRONO = {
       icon: 'fa-flask',
       cta: 'consult',
       items: [
-        { es: 'Reconstrucción capilar', en: 'Hair reconstruction',   price: 0 },
-        { es: 'Pigmentación',           en: 'Pigmentation',          price: 0 },
-        { es: 'Decoloración',           en: 'Bleaching',             price: 0 },
-        { es: 'Tratamientos densos',    en: 'Thickening treatments', price: 0 }
+        { id: 'fibra_reconstruccion', es: 'Reconstrucción capilar', en: 'Hair reconstruction' },
+        { id: 'fibra_pigmentacion', es: 'Pigmentación', en: 'Pigmentation' },
+        { id: 'fibra_decoloracion', es: 'Decoloración', en: 'Bleaching' },
+        { id: 'fibra_densos', es: 'Tratamientos densos', en: 'Thickening treatments' }
       ]
     },
     {
       id: 'masaje',
       icon: 'fa-hand-holding-heart',
       items: [
-        { es: 'Masaje relajante',     en: 'Relaxing massage',   price: 0 },
-        { es: 'Estimulación capilar', en: 'Scalp stimulation',  price: 0 },
-        { es: 'Alivio de tensión',    en: 'Tension relief',     price: 0 },
-        { es: 'Aromaterapia',         en: 'Aromatherapy',       price: 0 }
+        { id: 'masaje_relajante', es: 'Masaje relajante', en: 'Relaxing massage' },
+        { id: 'masaje_estimulacion', es: 'Estimulación capilar', en: 'Scalp stimulation' },
+        { id: 'masaje_tension', es: 'Alivio de tensión', en: 'Tension relief' },
+        { id: 'masaje_aromaterapia', es: 'Aromaterapia', en: 'Aromatherapy' }
       ]
     },
     {
       id: 'cejas',
       icon: 'fa-leaf',
       items: [
-        { es: 'Exfoliación facial',    en: 'Facial exfoliation',    price: 0 },
-        { es: 'Diseño de cejas',       en: 'Eyebrow design',        price: 0 },
-        { es: 'Perfilado profesional', en: 'Professional shaping',  price: 0 },
-        { es: 'Limpieza profunda',     en: 'Deep cleansing',        price: 0 }
+        { id: 'cejas_exfoliacion', es: 'Exfoliación facial', en: 'Facial exfoliation' },
+        { id: 'cejas_diseno', es: 'Diseño de cejas', en: 'Eyebrow design' },
+        { id: 'cejas_perfilado', es: 'Perfilado profesional', en: 'Professional shaping' },
+        { id: 'cejas_limpieza', es: 'Limpieza profunda', en: 'Deep cleansing' }
       ]
     }
   ],
   /**
-   * TIENDA — edita aquí `usd` y/o `cup` de cada artículo.
-   * El texto se arma solo:  $15 USD – 11.250 CUP
+   * TIENDA — artículos. Los PRECIOS se editan en js/precios.js
    * id debe coincidir con las claves product_* en i18n.js
    */
   products: [
-    { id: 'aceite',        usd: 15, cup: 11250, tag: 'best', img: 'https://images.unsplash.com/photo-1620916569884-4f2e7f7c5c5e?w=500&q=80' },
-    { id: 'cera',          usd: 12, cup: 15000,              img: 'https://images.unsplash.com/photo-1608248547993-df86be8b91f3?w=500&q=80' },
-    { id: 'aftershave',    usd: 10, cup: 7500,               img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80' },
-    { id: 'shampoo',       usd: 14, cup: 10500,              img: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&q=80' },
-    { id: 'maquina',       usd: 35, cup: 26250, tag: 'pro',  img: 'https://images.unsplash.com/photo-1621607512214-68297480165e?w=500&q=80' },
-    { id: 'tijeras',       usd: 6,  cup: 4500,               img: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80' },
-    { id: 'crema_afeitar', usd: 2,  cup: 1500,               img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80' },
-    { id: 'colonia',       usd: 3,  cup: 2250,  tag: 'new',  img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&q=80' },
-    { id: 'masaje_crema',  usd: 10, cup: 7500,               img: 'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=500&q=80' },
-    { id: 'tinte',         usd: 5,  cup: 3750,               img: 'https://images.unsplash.com/photo-1631730486572-226da1b718bb?w=500&q=80' }
+    { id: 'aceite', tag: 'best', img: 'https://images.unsplash.com/photo-1620916569884-4f2e7f7c5c5e?w=500&q=80' },
+    { id: 'cera', img: 'https://images.unsplash.com/photo-1608248547993-df86be8b91f3?w=500&q=80' },
+    { id: 'aftershave', img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80' },
+    { id: 'shampoo', img: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&q=80' },
+    { id: 'maquina', tag: 'pro', img: 'https://images.unsplash.com/photo-1621607512214-68297480165e?w=500&q=80' },
+    { id: 'tijeras', img: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80' },
+    { id: 'crema_afeitar', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80' },
+    { id: 'colonia', tag: 'new', img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&q=80' },
+    { id: 'masaje_crema', img: 'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=500&q=80' },
+    { id: 'tinte', img: 'https://images.unsplash.com/photo-1631730486572-226da1b718bb?w=500&q=80' }
   ],
   gallery: [
     { img: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80', large: true, key: 'fade' },
@@ -175,7 +164,26 @@ EL_TRONO.waUrl = function (key, vars, lang) {
 };
 
 /**
- * FORMATO DE PRECIOS (no necesitas editar esto)
+ * APLICAR PRECIOS desde js/precios.js (no necesitas editar esto)
+ * Si precios.js falta o falta un precio, se avisa en la consola del navegador (F12).
+ */
+(function () {
+  const P = (typeof PRECIOS !== 'undefined' && PRECIOS) || {};
+  if (!P.servicios && !P.productos) console.warn('[El Trono] No se encontró js/precios.js — revisa que se cargue antes de data.js');
+  EL_TRONO.services.forEach(sv => sv.items.forEach(it => {
+    const v = P.servicios && P.servicios[it.id];
+    if (v === undefined) console.warn('[El Trono] Falta el precio de servicio:', it.id);
+    it.price = (v === undefined ? 0 : v);
+  }));
+  EL_TRONO.products.forEach(p => {
+    const v = (P.productos && P.productos[p.id]) || {};
+    if (!(P.productos && P.productos[p.id])) console.warn('[El Trono] Falta el precio de producto:', p.id);
+    p.usd = v.usd; p.cup = v.cup;
+  });
+})();
+
+/**
+ * FORMATO DE PRECIOS
  */
 EL_TRONO.fmtGroup = function (n) {            // 11250 -> "11.250"
   return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
