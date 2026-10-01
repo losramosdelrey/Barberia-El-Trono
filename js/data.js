@@ -1,6 +1,14 @@
 /**
- * El Trono — Shared data (products, services, contact)
- * PRECIOS: edita solo aquí la propiedad `price` de cada producto.
+ * El Trono — Datos compartidos (servicios, tienda, contacto, redes)
+ *
+ * ┌─ CÓMO CAMBIAR LOS PRECIOS ──────────────────────────────────────────────┐
+ * │ SERVICIOS  → busca  services:  y cambia el número  price  de cada línea │
+ * │              (ej.  price: 150  se mostrará como  150.00 CUP).           │
+ * │ TIENDA     → busca  products:  y cambia  usd  y/o  cup  de cada artículo│
+ * │              (ej.  usd: 15, cup: 11250  →  $15 USD – 11.250 CUP).       │
+ * │              Si un artículo solo tiene un precio, borra la otra línea.  │
+ * │ Guarda el archivo y recarga la página. No hay que tocar ningún HTML.    │
+ * └─────────────────────────────────────────────────────────────────────────┘
  */
 const EL_TRONO = {
   contact: {
@@ -18,119 +26,96 @@ const EL_TRONO = {
     }
   },
   social: {
-    facebook: 'https://facebook.com/',
-    twitter: 'https://twitter.com/',
-    instagram: 'https://instagram.com/'
+    facebook: '',   // ← pega aquí la dirección de Facebook
+    twitter: '',    // ← pega aquí la dirección de Twitter
+    instagram: ''   // ← pega aquí la dirección de Instagram
   },
+  /**
+   * SERVICIOS — cada servicio tiene su lista de derivados con su precio (CUP).
+   *   price: número  → se muestra con 2 decimales, ej. 0 → "0.00 CUP"
+   *   price: 'texto' → se muestra tal cual, ej. 'Desde 500 CUP' o 'Consultar'
+   * `es` / `en` son los nombres que ve el cliente en cada idioma.
+   */
   services: [
     {
       id: 'corte',
       icon: 'fa-cut',
-      items: {
-        es: ['A máquina', 'Tradicional', 'De diseño', 'Estilo personalizado'],
-        en: ['Machine cut', 'Traditional cut', 'Designer cut', 'Custom style']
-      }
+      items: [
+        { es: 'A máquina',            en: 'Machine cut',     price: 0 },
+        { es: 'Tradicional',          en: 'Traditional cut', price: 0 },
+        { es: 'De diseño',            en: 'Designer cut',    price: 0 },
+        { es: 'Estilo personalizado', en: 'Custom style',    price: 0 }
+      ]
     },
     {
       id: 'peinados',
-      icon: 'fa-spa',
-      items: {
-        es: ['Peinados sencillos', 'Estilos modernos', 'Acabado profesional', 'Productos premium'],
-        en: ['Simple hairstyles', 'Modern styles', 'Professional finish', 'Premium products']
-      }
+      icon: 'comb',
+      items: [
+        { es: 'Peinados sencillos',   en: 'Simple hairstyles',     price: 0 },
+        { es: 'Estilos modernos',     en: 'Modern styles',         price: 0 },
+        { es: 'Acabado profesional',  en: 'Professional finish',   price: 0 },
+        { es: 'Productos premium',    en: 'Premium products',      price: 0 }
+      ]
     },
     {
       id: 'afeitado',
       icon: 'razor',
       featured: true,
-      items: {
-        es: ['Tradicional con navaja', 'Rasurado completo', 'Diseño de barbas', 'Toalla caliente'],
-        en: ['Traditional straight-razor shave', 'Full shave', 'Beard design', 'Hot towel']
-      }
+      items: [
+        { es: 'Tradicional con navaja', en: 'Traditional straight-razor shave', price: 0 },
+        { es: 'Rasurado completo',      en: 'Full shave',                       price: 0 },
+        { es: 'Diseño de barbas',       en: 'Beard design',                     price: 0 },
+        { es: 'Toalla caliente',        en: 'Hot towel',                        price: 0 }
+      ]
     },
     {
       id: 'fibra',
       icon: 'fa-flask',
-      items: {
-        es: ['Reconstrucción capilar', 'Pigmentación', 'Decoloración', 'Tratamientos densos'],
-        en: ['Hair reconstruction', 'Pigmentation', 'Bleaching', 'Thickening treatments']
-      }
+      cta: 'consult',
+      items: [
+        { es: 'Reconstrucción capilar', en: 'Hair reconstruction',   price: 0 },
+        { es: 'Pigmentación',           en: 'Pigmentation',          price: 0 },
+        { es: 'Decoloración',           en: 'Bleaching',             price: 0 },
+        { es: 'Tratamientos densos',    en: 'Thickening treatments', price: 0 }
+      ]
     },
     {
       id: 'masaje',
       icon: 'fa-hand-holding-heart',
-      items: {
-        es: ['Masaje relajante', 'Estimulación capilar', 'Alivio de tensión', 'Aromaterapia'],
-        en: ['Relaxing massage', 'Scalp stimulation', 'Tension relief', 'Aromatherapy']
-      }
+      items: [
+        { es: 'Masaje relajante',     en: 'Relaxing massage',   price: 0 },
+        { es: 'Estimulación capilar', en: 'Scalp stimulation',  price: 0 },
+        { es: 'Alivio de tensión',    en: 'Tension relief',     price: 0 },
+        { es: 'Aromaterapia',         en: 'Aromatherapy',       price: 0 }
+      ]
     },
     {
       id: 'cejas',
       icon: 'fa-leaf',
-      items: {
-        es: ['Exfoliación facial', 'Diseño de cejas', 'Perfilado profesional', 'Limpieza profunda'],
-        en: ['Facial exfoliation', 'Eyebrow design', 'Professional shaping', 'Deep cleansing']
-      }
+      items: [
+        { es: 'Exfoliación facial',    en: 'Facial exfoliation',    price: 0 },
+        { es: 'Diseño de cejas',       en: 'Eyebrow design',        price: 0 },
+        { es: 'Perfilado profesional', en: 'Professional shaping',  price: 0 },
+        { es: 'Limpieza profunda',     en: 'Deep cleansing',        price: 0 }
+      ]
     }
   ],
   /**
-   * TIENDA — Edita price aquí únicamente.
+   * TIENDA — edita aquí `usd` y/o `cup` de cada artículo.
+   * El texto se arma solo:  $15 USD – 11.250 CUP
    * id debe coincidir con las claves product_* en i18n.js
    */
   products: [
-    {
-      id: 'aceite',
-      price: '$15 USD – 11.250 CUP',
-      tag: 'best',
-      img: 'https://images.unsplash.com/photo-1620916569884-4f2e7f7c5c5e?w=500&q=80'
-    },
-    {
-      id: 'cera',
-      price: '$12 USD – 15.000 CUP',
-      img: 'https://images.unsplash.com/photo-1608248547993-df86be8b91f3?w=500&q=80'
-    },
-    {
-      id: 'aftershave',
-      price: '$10 USD– 7.500 CUP',
-      img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80'
-    },
-    {
-      id: 'shampoo',
-      price: '$14 USD – 10.500 CUP',
-      img: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&q=80'
-    },
-    {
-      id: 'maquina',
-      price: '$35 – 26.250 CUP',
-      tag: 'pro',
-      img: 'https://images.unsplash.com/photo-1621607512214-68297480165e?w=500&q=80'
-    },
-    {
-      id: 'tijeras',
-      price: '$6 USD – 4.500 CUP',
-      img: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80'
-    },
-    {
-      id: 'crema_afeitar',
-      price: '$2 USD – 1.500 CUP',
-      img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80'
-    },
-    {
-      id: 'colonia',
-      price: '$3 USD – 2.250‬ CUP',
-      tag: 'new',
-      img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&q=80'
-    },
-    {
-      id: 'masaje_crema',
-      price: '$10 USD – 7.500 CUP',
-      img: 'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=500&q=80'
-    },
-    {
-      id: 'tinte',
-      price: '$5 USD – 3.750 CUP',
-      img: 'https://images.unsplash.com/photo-1631730486572-226da1b718bb?w=500&q=80'
-    }
+    { id: 'aceite',        usd: 15, cup: 11250, tag: 'best', img: 'https://images.unsplash.com/photo-1620916569884-4f2e7f7c5c5e?w=500&q=80' },
+    { id: 'cera',          usd: 12, cup: 15000,              img: 'https://images.unsplash.com/photo-1608248547993-df86be8b91f3?w=500&q=80' },
+    { id: 'aftershave',    usd: 10, cup: 7500,               img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&q=80' },
+    { id: 'shampoo',       usd: 14, cup: 10500,              img: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&q=80' },
+    { id: 'maquina',       usd: 35, cup: 26250, tag: 'pro',  img: 'https://images.unsplash.com/photo-1621607512214-68297480165e?w=500&q=80' },
+    { id: 'tijeras',       usd: 6,  cup: 4500,               img: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&q=80' },
+    { id: 'crema_afeitar', usd: 2,  cup: 1500,               img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500&q=80' },
+    { id: 'colonia',       usd: 3,  cup: 2250,  tag: 'new',  img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&q=80' },
+    { id: 'masaje_crema',  usd: 10, cup: 7500,               img: 'https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=500&q=80' },
+    { id: 'tinte',         usd: 5,  cup: 3750,               img: 'https://images.unsplash.com/photo-1631730486572-226da1b718bb?w=500&q=80' }
   ],
   gallery: [
     { img: 'https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80', large: true, key: 'fade' },
@@ -187,4 +172,21 @@ EL_TRONO.waUrl = function (key, vars, lang) {
   Object.keys(vars || {}).forEach(k => { body = body.split('{' + k + '}').join(vars[k]); });
   const text = m.greet + ' ' + body + ' ' + m.close;
   return 'https://wa.me/' + EL_TRONO.contact.whatsapp + '?text=' + encodeURIComponent(text);
+};
+
+/**
+ * FORMATO DE PRECIOS (no necesitas editar esto)
+ */
+EL_TRONO.fmtGroup = function (n) {            // 11250 -> "11.250"
+  return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+};
+EL_TRONO.priceService = function (price) {    // 0 -> "0.00 CUP" | 'texto' -> 'texto'
+  if (typeof price === 'number') return price.toFixed(2) + ' CUP';
+  return String(price == null ? '' : price);
+};
+EL_TRONO.priceProduct = function (p) {        // {usd:15,cup:11250} -> "$15 USD – 11.250 CUP"
+  const parts = [];
+  if (typeof p.usd === 'number') parts.push('$' + p.usd + ' USD');
+  if (typeof p.cup === 'number') parts.push(EL_TRONO.fmtGroup(p.cup) + ' CUP');
+  return parts.join(' – ');
 };

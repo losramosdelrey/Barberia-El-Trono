@@ -76,7 +76,7 @@
           </div>
         </div>
         <div class="contact-form-wrap">
-          <h3 data-i18n="contact_form_title">Envíanos un mensaje</h3>
+          <h3 class="form-title"><svg class="icon-msg-gold" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><defs><linearGradient id="goldMsg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc7a"/><stop offset=".5" stop-color="#c9a227"/><stop offset="1" stop-color="#8f6f12"/></linearGradient></defs><path d="M4 3.5h16A2.5 2.5 0 0 1 22.5 6v9.5A2.5 2.5 0 0 1 20 18h-8.2l-4.6 3.7a.6.6 0 0 1-1-.47V18H4A2.5 2.5 0 0 1 1.5 15.5V6A2.5 2.5 0 0 1 4 3.5z" fill="url(#goldMsg)"/><path d="M5.5 8.2h13M5.5 11.2h13M5.5 14.2h8" stroke="#1a1608" stroke-width="1.5" stroke-linecap="round" opacity=".75"/></svg><span data-i18n="contact_form_title">Envíanos un mensaje</span></h3>
           <form class="contact-form" id="contact-form">
             <div class="form-group"><input type="text" name="name" data-i18n-placeholder="contact_name" placeholder="Tu nombre" required></div>
             <div class="form-group"><input type="tel" name="phone" data-i18n-placeholder="contact_phone_ph" placeholder="Teléfono / WhatsApp" required></div>
@@ -121,8 +121,13 @@
           <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
         </ul>
       </nav>
+      <div class="footer-social" aria-label="Redes sociales" data-i18n-aria="social_label">
+        <a href="#" data-social="facebook" class="social-link" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" data-social="twitter" class="social-link" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="#" data-social="instagram" class="social-link" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+      </div>
       <div class="footer-bottom">
-        <p data-i18n="footer_copy">© 2026 Barbería El Trono. Todos los derechos reservados.</p>
+        <p data-i18n="footer_copy">© 2026 Sitio web creado por MSc. Reynaldo Ramos. Todos los derechos reservados. Pinar del Río, Cuba.</p>
         <div class="footer-legal">
           <a href="#" data-i18n="footer_terms">Términos de uso</a>
           <a href="#" data-i18n="footer_privacy">Privacidad</a>
@@ -191,5 +196,6 @@
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script src="js/install.js"></script>
+  <script src="js/cursor.js"></script>
 </body>
 </html>

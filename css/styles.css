@@ -41,11 +41,11 @@ ul{list-style:none}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:flex;align-items:center;gap:12px}
 .logo-img{width:58px;height:58px;object-fit:contain;border-radius:0;flex-shrink:0;background:transparent}
-.logo-text{font-family:var(--font-script),cursive;font-weight:700;font-size:2.15rem;line-height:1;letter-spacing:1px;background:linear-gradient(135deg,var(--gold-l),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:var(--gold);-webkit-text-stroke:0.3px rgba(201,162,39,.25)}
+.logo-text{font-family:var(--font-script),cursive;font-weight:700;font-size:2.5rem;line-height:1;letter-spacing:1px;color:var(--gold);background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:var(--gold);-webkit-text-stroke:0}
 .logo-icon{display:none}
 @media(max-width:480px){
   .logo-img{width:46px;height:46px}
-  .logo-text{font-size:1.6rem}
+  .logo-text{font-size:1.85rem}
   .logo{gap:8px}
 }
 .nav-menu{display:flex;gap:28px;align-items:center}
@@ -427,3 +427,66 @@ ul{list-style:none}
     mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%);
   }
 }
+
+/* ===== Redes sociales (final de página) ===== */
+.footer-social{display:flex;justify-content:center;gap:14px;margin:0 0 30px}
+.social-link{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--gold);color:var(--gold);font-size:1.1rem;background:rgba(201,162,39,.08);transition:var(--tr)}
+.social-link:hover{background:var(--gold);color:#0a0a0a;transform:translateY(-3px);box-shadow:0 8px 22px rgba(201,162,39,.4)}
+
+/* ===== Testimonios: rostro redondo ===== */
+.testi-slide{padding-top:62px}
+.testi-slide::before{left:26px;transform:none;top:-8px;font-size:4.4rem}
+.testi-avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid var(--gold);box-shadow:0 6px 22px rgba(201,162,39,.35);background:#141414}
+@media(max-width:480px){.testi-avatar{width:72px;height:72px}.testi-slide{padding-top:56px}}
+
+/* ===== Horarios (servicios) ===== */
+.services-hours{margin:26px auto 0;text-align:center}
+.services-hours .hours-title{font-family:var(--font-d);font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:6px}
+.services-hours .hours-line{color:var(--gold);font-weight:700;font-style:italic;font-size:1rem;line-height:1.7;margin:0}
+
+/* ===== Icono mensaje dorado (contacto) ===== */
+.contact-form-wrap h3.form-title{display:flex;align-items:center;gap:12px}
+.icon-msg-gold{width:34px;height:34px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(232,197,71,.55)) drop-shadow(0 2px 10px rgba(201,162,39,.35))}
+
+/* ===== Servicios: peine + precios ===== */
+.service-icon svg.icon-comb{width:34px;height:34px}
+.service-card li{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.svc-price{margin-left:auto;flex-shrink:0;color:var(--gold);font-weight:700;font-size:.85rem;letter-spacing:.3px;white-space:nowrap;text-align:right}
+
+/* ===== Cursor personalizado ===== */
+:root{--cur-dot:8px;--cur-ring:38px;--cur-color:var(--gold)}
+html.has-cursor,html.has-cursor *{cursor:none!important}
+html.has-cursor input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]),html.has-cursor textarea{cursor:text!important}
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;z-index:100000;pointer-events:none;opacity:0;will-change:transform}
+.cursor-dot.on,.cursor-ring.on{opacity:1}
+.cursor-dot{width:var(--cur-dot);height:var(--cur-dot);border-radius:50%;background:var(--cur-color);box-shadow:0 0 10px rgba(201,162,39,.7);transition:opacity .25s ease,width .25s ease,height .25s ease}
+.cursor-ring{width:var(--cur-ring);height:var(--cur-ring);border-radius:50%;border:1.5px solid var(--cur-color);transition:opacity .25s ease,width .3s cubic-bezier(.4,0,.2,1),height .3s cubic-bezier(.4,0,.2,1),background-color .3s ease,border-color .3s ease}
+.cursor-ring.is-hover{width:64px;height:64px;background:rgba(201,162,39,.14);border-color:var(--gold-l)}
+.cursor-dot.is-hover{width:5px;height:5px}
+.cursor-ring.is-down{width:28px;height:28px;background:rgba(201,162,39,.3)}
+.cursor-ring.is-text,.cursor-dot.is-text{opacity:0!important}
+@media(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
+
+/* ===== Barberos de estudio — retrato recortado estilo Barber & Co ===== */
+.barber-photo::before{content:'';position:absolute;left:50%;bottom:8%;width:86%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.20) 0%,rgba(201,162,39,.06) 45%,transparent 70%);opacity:.55;transition:opacity .5s ease,transform .5s ease;z-index:0;pointer-events:none}
+.barber-card:hover .barber-photo::before{opacity:1;transform:translateX(-50%) scale(1.08)}
+.barber-photo img{position:relative;z-index:1;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 58%,transparent 100%),linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,#000 0%,#000 58%,transparent 100%),linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%);
+  mask-composite:intersect;
+  filter:grayscale(.25) contrast(1.04) drop-shadow(0 18px 40px rgba(0,0,0,.7));
+  transition:transform .55s ease,filter .55s ease}
+.barber-card:hover .barber-photo img{filter:grayscale(0) contrast(1.06) drop-shadow(0 22px 46px rgba(0,0,0,.75))}
+.barber-info h3{transition:color .35s ease}
+.barber-card:hover .barber-info h3{color:var(--gold-l)}
+@media(max-width:480px){
+  .barber-photo img{
+    -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%),linear-gradient(90deg,transparent 0%,#000 7%,#000 93%,transparent 100%);
+    mask-image:linear-gradient(180deg,#000 0%,#000 55%,transparent 100%),linear-gradient(90deg,transparent 0%,#000 7%,#000 93%,transparent 100%)}
+}
+/* Ajuste: el difuminado lateral se aplica sobre la propia foto (no sobre la caja) */
+.barber-photo{display:flex;justify-content:center;align-items:flex-end}
+.barber-photo img{width:auto;max-width:100%;height:100%;aspect-ratio:409/610;object-fit:cover;object-position:center bottom;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 58%,transparent 100%),linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 58%,transparent 100%),linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%)}

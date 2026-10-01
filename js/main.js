@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Render shop from data.js
+  // Render services + shop from data.js
+  renderServices();
   renderShop();
 
   // Contact form → WhatsApp (message addressed to the barbershop, in the visitor's language)
@@ -61,9 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (typeof Lang !== 'undefined') {
     Lang.init();
-    document.addEventListener('langchange', () => { renderShop(); applyWaLinks(); });
+    document.addEventListener('langchange', () => { renderServices(); renderShop(); applyWaLinks(); });
   }
   applyWaLinks();
+  applySocialLinks();
 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -98,6 +100,49 @@ function applyWaLinks(root) {
   });
 }
 
+/** Servicios: se dibujan desde EL_TRONO.services (js/data.js) — nombres y precios en un solo lugar. */
+const SERVICE_ICONS = {
+  razor: '<svg class="icon-razor" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g transform="rotate(-18 12 12)"><path d="M1.6 8.4h12.6a1.6 1.6 0 0 1 1.6 1.6v.4a1.6 1.6 0 0 1-1.6 1.6H5.6C3.3 12 2 10.6 1.6 8.4z" fill="currentColor"/><g transform="rotate(38 14.6 10.2)"><rect x="12.9" y="8.5" width="10.2" height="3.4" rx="1.7" fill="currentColor" opacity=".8"/></g><circle cx="14.6" cy="10.2" r="1.1" fill="#1a1608" stroke="currentColor" stroke-width=".7"/></g></svg>',
+  comb: '<svg class="icon-comb" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="6" rx="2" fill="currentColor"/><g fill="currentColor" opacity=".85"><rect x="3.2" y="11" width="1.7" height="8" rx=".85"/><rect x="6.4" y="11" width="1.7" height="8" rx=".85"/><rect x="9.6" y="11" width="1.7" height="8" rx=".85"/><rect x="12.8" y="11" width="1.7" height="8" rx=".85"/><rect x="16" y="11" width="1.7" height="8" rx=".85"/><rect x="19.2" y="11" width="1.7" height="8" rx=".85"/></g></svg>'
+};
+
+function renderServices() {
+  const grid = document.getElementById('services-grid');
+  if (!grid || typeof EL_TRONO === 'undefined') return;
+  const lang = (typeof Lang !== 'undefined' && Lang.current) || 'es';
+  const t = (key) => (typeof Lang !== 'undefined' ? Lang.t(key) : key);
+  const esc = (v) => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+  grid.innerHTML = EL_TRONO.services.map(sv => {
+    const icon = SERVICE_ICONS[sv.icon] || `<i class="fas ${sv.icon}"></i>`;
+    const items = sv.items.map(it =>
+      `<li><span>${esc(it[lang] || it.es)}</span><span class="svc-price">${esc(EL_TRONO.priceService(it.price))}</span></li>`
+    ).join('');
+    const badge = sv.featured ? `<div class="service-badge">${esc(t('service_popular'))}</div>` : '';
+    const cta = sv.cta === 'consult' ? 'service_consult' : 'service_book';
+    return `
+        <article class="service-card${sv.featured ? ' featured' : ''}">
+          ${badge}
+          <div class="service-icon">${icon}</div>
+          <h3>${esc(t('service_' + sv.id))}</h3>
+          <ul>${items}</ul>
+          <a href="#" data-wa="${sv.id}" class="service-link" target="_blank" rel="noopener">${esc(t(cta))}</a>
+        </article>`;
+  }).join('');
+
+  applyWaLinks(grid);
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  grid.querySelectorAll('.service-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .55s ease, transform .55s ease';
+    obs.observe(el);
+  });
+}
+
 function renderShop() {
   const grid = document.getElementById('shop-grid');
   if (!grid || typeof EL_TRONO === 'undefined') return;
@@ -124,7 +169,7 @@ function renderShop() {
           <h3>${title}</h3>
           <p>${desc}</p>
           <div class="product-price">
-            <span class="price">${p.price}</span>
+            <span class="price">${EL_TRONO.priceProduct(p)}</span>
             <a href="#" data-wa="product" data-wa-product="${title}" class="btn-buy" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
         </div>
@@ -198,3 +243,12 @@ function renderShop() {
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
+
+/** Redes sociales: las direcciones se configuran solo en js/data.js (EL_TRONO.social). */
+function applySocialLinks() {
+  if (typeof EL_TRONO === 'undefined' || !EL_TRONO.social) return;
+  document.querySelectorAll('[data-social]').forEach(a => {
+    const url = EL_TRONO.social[a.dataset.social];
+    if (url) { a.href = url; } else { a.setAttribute('href', '#'); a.addEventListener('click', e => e.preventDefault()); }
+  });
+}
