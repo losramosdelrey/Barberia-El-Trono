@@ -21,7 +21,6 @@ el-trono/
 │   ├── i18n.js             → ES / EN
 │   ├── main.js
 │   ├── install.js          → PWA install
-│   └── sw.js               → service worker
 ├── images/
 │   ├── backgrounds/
 │   ├── servicios/
@@ -31,6 +30,7 @@ el-trono/
 │   ├── flags/              → es.svg, en.svg
 │   └── banners/
 ├── icons/                  → PWA icons
+├── sw.js                   → service worker (raíz para que cubra todo el sitio)
 ├── manifest.json
 ├── sitemap.xml
 ├── robots.txt
@@ -42,9 +42,10 @@ el-trono/
 - **Idiomas:** ES (bandera España) / EN (bandera EE.UU.) — botón en header
 - **Responsive** desktop + móvil
 - **Desktop floats:** WhatsApp + Email
-- **Móvil floats:** WhatsApp + Llamar + Descargar App
-- **Redes al final de cada página:** Facebook, Twitter, Instagram
-- **PWA:** manifest + service worker + banner de instalación
+- **Móvil floats:** Llamar + Instalar App + WhatsApp (una fila abajo). El botón «Instalar App» se oculta solo cuando la app ya está instalada
+- **Pie de página:** logo + título centrados y navegación en cuadrícula 3 × 3
+- **WhatsApp:** todos los enlaces abren un mensaje ya redactado para la barbería, en el idioma elegido (ver `EL_TRONO.waMsg` en `js/data.js`)
+- **PWA:** manifest (abre en `inicio.html`) + service worker + banner y guía de instalación (iOS / Android)
 - **SEO:** sitemap, robots, schema LocalBusiness
 - **Formulario** → WhatsApp pre-rellenado
 - **Mapa** coords 22.421887, -83.701554

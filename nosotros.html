@@ -2,10 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Nosotros | El Trono Barbería</title>
   <meta name="description" content="Conoce Barbería El Trono: historia, valores y experiencia premium en Cuba.">
   <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="El Trono">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#c9a227">
   <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +18,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/install.css">
 </head>
-<body>
+<body data-title="title_nosotros">
   <header class="header scrolled" id="header">
     <nav class="nav container">
       <a href="inicio.html" class="logo"><img src="images/logos/logo-mark.svg" alt="El Trono" class="logo-img"><span class="logo-text">El Trono</span></a>
@@ -30,8 +35,8 @@
           <button class="lang-btn active" data-lang="es" title="Español"><img src="images/flags/es.svg" alt="ES"></button>
           <button class="lang-btn" data-lang="en" title="English"><img src="images/flags/en.svg" alt="EN"></button>
         </div>
-        <a href="https://wa.me/5354293791?text=Hola%20El%20Trono" class="btn btn-gold nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> <span data-i18n="nav_book">Reservar</span></a>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        <a href="https://wa.me/5354293791?text=Hola%2C%20buen%20d%C3%ADa%20%F0%9F%91%8B%20Les%20escribo%20desde%20la%20p%C3%A1gina%20web%20de%20%2ABarber%C3%ADa%20El%20Trono%2A.%20Quisiera%20hacerles%20una%20consulta%2C%20por%20favor.%20Quedo%20atento%20a%20su%20respuesta.%20%C2%A1Gracias%21" data-wa="general" class="btn btn-gold nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> <span data-i18n="nav_book">Reservar</span></a>
+        <button class="nav-toggle" id="nav-toggle" data-i18n-aria="aria_menu" aria-label="Menú"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </header>
@@ -47,10 +52,10 @@
     <div class="container about-grid">
       <div class="about-images">
         <div class="about-img main">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80" alt="Barbero">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80" data-i18n-alt="alt_barber" alt="Barbero">
         </div>
         <div class="about-img secondary">
-          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80" alt="Ambiente">
+          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80" data-i18n-alt="gallery_ambiance" alt="Ambiente">
         </div>
         <div class="about-badge">
           <span class="badge-number">👑</span>
@@ -66,71 +71,122 @@
           <div class="feature"><i class="fas fa-check-circle"></i><span data-i18n="about_f3">Ambiente exclusivo</span></div>
           <div class="feature"><i class="fas fa-check-circle"></i><span data-i18n="about_f4">Atención personalizada</span></div>
         </div>
-        <a href="contacto.html" class="btn btn-gold" data-i18n="about_cta">Conócenos más</a>
+        <div class="about-cta"><a href="contacto.html" class="btn btn-gold" data-i18n="about_cta">Conócenos más</a></div>
       </div>
     </div>
   </section>
 
-  <div class="social-bar">
-    <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-  </div>
+  <section class="team section" id="barberos" aria-labelledby="team-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="team_tag">Nuestro equipo</span>
+        <h2 class="section-title" id="team-heading"><span data-i18n="team_title">Barberos de</span> <span class="gold" data-i18n="team_title_gold">estudio</span></h2>
+        <p class="section-desc" data-i18n="team_sub">Nuestros expertos están aquí para llevar tu estilo al siguiente nivel.</p>
+      </div>
+      <div class="team-grid">
+        <article class="barber-card">
+          <div class="barber-photo"><img src="images/equipo/alejandro-rivera.png" alt="Alejandro Rivera" loading="lazy"></div>
+          <div class="barber-info">
+            <h3 data-i18n="team_1_name">Alejandro Rivera</h3>
+            <p class="barber-role" data-i18n="team_1_role"></p>
+            <a href="#" data-wa="barber" data-wa-barber="Alejandro Rivera" class="btn btn-gold btn-sm barber-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="team_book">Reservar ahora</span></a>
+          </div>
+        </article>
+        <article class="barber-card">
+          <div class="barber-photo"><img src="images/equipo/daniel-cabrera.png" alt="Daniel Cabrera" loading="lazy"></div>
+          <div class="barber-info">
+            <h3 data-i18n="team_2_name">Daniel Cabrera</h3>
+            <p class="barber-role" data-i18n="team_2_role"></p>
+            <a href="#" data-wa="barber" data-wa-barber="Daniel Cabrera" class="btn btn-gold btn-sm barber-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="team_book">Reservar ahora</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="inicio.html" class="logo"><img src="images/logos/logo-mark.svg" alt="El Trono" class="logo-img"><span class="logo-text">El Trono</span></a>
-          <p data-i18n="footer_desc">Barbería y salón de belleza masculino.</p>
-          <div class="socials">
-            <a href="https://facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer_nav">Navegación</h4>
-          <ul>
-            <li><a href="inicio.html" data-i18n="nav_home">Inicio</a></li>
-            <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
-            <li><a href="tienda.html" data-i18n="nav_shop">Tienda</a></li>
-            <li><a href="galeria.html" data-i18n="nav_gallery">Galería</a></li>
-            <li><a href="nosotros.html" data-i18n="nav_about">Nosotros</a></li>
-            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4 data-i18n="footer_services">Servicios</h4>
-          <ul>
-            <li><a href="servicios.html" data-i18n="service_corte">Cortes</a></li>
-            <li><a href="servicios.html" data-i18n="service_afeitado">Afeitado</a></li>
-            <li><a href="tienda.html" data-i18n="nav_shop">Productos</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4 data-i18n="footer_contact">Contacto</h4>
-          <p><i class="fas fa-phone"></i> +53 54293791</p>
-          <p><i class="fas fa-map-marker-alt"></i> Cuba</p>
-          <a href="https://wa.me/5354293791" class="btn btn-outline btn-sm" target="_blank">WhatsApp</a>
-        </div>
+      <div class="footer-center">
+        <a href="inicio.html" class="logo footer-logo"><img src="images/logos/logo-mark.svg" alt="El Trono" class="logo-img"><span class="logo-text">El Trono</span></a>
+        <p class="footer-slogan" data-i18n="footer_slogan">Donde el estilo se convierte en arte</p>
+        <p data-i18n="footer_desc">Barbería y salón de belleza masculino. Estilo, precisión y experiencia premium en cada visita.</p>
       </div>
+      <nav class="footer-nav" aria-label="Navegación">
+        <h4 data-i18n="footer_nav">Navegación</h4>
+        <ul>
+          <li><a href="inicio.html" data-i18n="nav_home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+          <li><a href="tienda.html" data-i18n="nav_shop">Tienda</a></li>
+          <li><a href="galeria.html" data-i18n="nav_gallery">Galería</a></li>
+          <li><a href="nosotros.html" data-i18n="nav_about">Nosotros</a></li>
+          <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+        </ul>
+      </nav>
       <div class="footer-bottom">
-        <p data-i18n="footer_copy">© 2025 Barbería El Trono.</p>
-        <div class="footer-legal"><a href="#" data-i18n="footer_terms">Términos</a><a href="#" data-i18n="footer_privacy">Privacidad</a></div>
+        <p data-i18n="footer_copy">© 2026 Barbería El Trono. Todos los derechos reservados.</p>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer_terms">Términos de uso</a>
+          <a href="#" data-i18n="footer_privacy">Privacidad</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Floating buttons: desktop -->
   <div class="float-btns float-desktop">
-    <a href="mailto:info@eltrono.cu" class="float-btn float-email" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    <a href="https://wa.me/5354293791" class="float-btn float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="mailto:info@eltrono.cu" class="float-btn float-email" data-i18n-aria="aria_email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://wa.me/5354293791?text=Hola%2C%20buen%20d%C3%ADa%20%F0%9F%91%8B%20Les%20escribo%20desde%20la%20p%C3%A1gina%20web%20de%20%2ABarber%C3%ADa%20El%20Trono%2A.%20Quisiera%20hacerles%20una%20consulta%2C%20por%20favor.%20Quedo%20atento%20a%20su%20respuesta.%20%C2%A1Gracias%21" data-wa="general" data-wa="general" class="float-btn float-wa" target="_blank" rel="noopener" data-i18n-aria="aria_wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
+  <!-- Floating buttons: mobile -->
   <div class="float-btns float-mobile">
-    <a href="tel:+5354293791" class="float-btn float-call" aria-label="Llamar"><i class="fas fa-phone-alt"></i></a>
-    <button type="button" class="float-btn float-app" onclick="elTronoInstall&&elTronoInstall()"><i class="fas fa-download"></i> <span data-i18n="float_app">App</span></button>
-    <a href="https://wa.me/5354293791" class="float-btn float-wa" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+5354293791" class="float-btn float-call" data-i18n-aria="aria_call" aria-label="Llamar"><i class="fas fa-phone-alt"></i></a>
+    <button type="button" class="float-btn float-app" id="install-fab" onclick="elTronoInstall()" data-i18n-aria="install_fab" aria-label="Instalar App"><i class="fas fa-download"></i><span data-i18n="install_fab">Instalar App</span></button>
+    <a href="https://wa.me/5354293791?text=Hola%2C%20buen%20d%C3%ADa%20%F0%9F%91%8B%20Les%20escribo%20desde%20la%20p%C3%A1gina%20web%20de%20%2ABarber%C3%ADa%20El%20Trono%2A.%20Quisiera%20hacerles%20una%20consulta%2C%20por%20favor.%20Quedo%20atento%20a%20su%20respuesta.%20%C2%A1Gracias%21" data-wa="general" data-wa="general" class="float-btn float-wa" target="_blank" rel="noopener" data-i18n-aria="aria_wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   </div>
+
+  <!-- PWA install banner -->
+  <div class="install-banner" id="install-banner" role="dialog" aria-live="polite">
+    <button type="button" class="install-close" onclick="elTronoInstallDismiss()" data-i18n-aria="install_close" aria-label="Cerrar"><i class="fas fa-xmark"></i></button>
+    <div class="install-info">
+      <img src="icons/icon-192.png" alt="El Trono">
+      <div>
+        <h4 data-i18n="install_title">Instalar El Trono</h4>
+        <p data-i18n="install_desc">Añade la app a tu pantalla de inicio para acceso rápido.</p>
+      </div>
+    </div>
+    <div class="install-actions">
+      <button type="button" class="btn btn-outline btn-sm" onclick="elTronoInstallDismiss()" data-i18n="install_later">Ahora no</button>
+      <button type="button" class="btn btn-gold btn-sm" onclick="elTronoInstall()"><i class="fas fa-download"></i> <span data-i18n="install_btn">Instalar</span></button>
+    </div>
+  </div>
+
+  <!-- Install help (iOS / browsers without native prompt) -->
+  <div class="install-help" id="install-help" hidden>
+    <div class="install-help-backdrop" onclick="elTronoInstallHelpClose()"></div>
+    <div class="install-help-sheet" role="dialog" aria-modal="true">
+      <img src="icons/icon-192.png" alt="El Trono" class="ih-icon">
+      <h3 data-i18n="install_help_title">Instala El Trono en tu teléfono</h3>
+      <p class="ih-sub" data-i18n="install_help_sub">Acceso rápido desde tu pantalla de inicio, como una app.</p>
+      <div class="ih-block" id="ih-ios" hidden>
+        <h4><i class="fab fa-apple"></i> <span data-i18n="install_help_ios">En iPhone / iPad (Safari)</span></h4>
+        <ol>
+          <li data-i18n="install_ios_1" data-i18n-html>Toca el botón <b>Compartir</b> de Safari.</li>
+          <li data-i18n="install_ios_2" data-i18n-html>Elige <b>«Añadir a pantalla de inicio»</b>.</li>
+          <li data-i18n="install_ios_3" data-i18n-html>Pulsa <b>«Añadir»</b>.</li>
+        </ol>
+      </div>
+      <div class="ih-block" id="ih-and" hidden>
+        <h4><i class="fab fa-android"></i> <span data-i18n="install_help_and">En Android (Chrome)</span></h4>
+        <ol>
+          <li data-i18n="install_and_1" data-i18n-html>Abre el menú <b>⋮</b> del navegador.</li>
+          <li data-i18n="install_and_2" data-i18n-html>Elige <b>«Instalar aplicación»</b>.</li>
+          <li data-i18n="install_and_3" data-i18n-html>Confirma y abre El Trono.</li>
+        </ol>
+      </div>
+      <button type="button" class="btn btn-gold btn-full" onclick="elTronoInstallHelpClose()" data-i18n="install_help_ok">Entendido</button>
+    </div>
+  </div>
+  <div class="install-toast" id="install-toast" role="status"></div>
 
   <script src="js/data.js"></script>
   <script src="js/i18n.js"></script>
