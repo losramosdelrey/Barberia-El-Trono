@@ -66,28 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   applyWaLinks();
   applySocialLinks();
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.service-card, .product-card, .gallery-item, .contact-card, .about-content, .about-images, .barber-card').forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(50px) scale(0.96)';
-    el.style.filter = 'blur(4px)';
-    el.style.transition = 'opacity .8s cubic-bezier(0.16,1,0.3,1), transform .8s cubic-bezier(0.16,1,0.3,1), filter .8s cubic-bezier(0.16,1,0.3,1)';
-    el.style.transitionDelay = (i % 6) * 0.07 + 's';
-    obs.observe(el);
-  });
-
-  const style = document.createElement('style');
-  style.textContent = '.visible{opacity:1!important;transform:translateY(0) scale(1)!important;filter:none!important}';
-  document.head.appendChild(style);
 });
 
 /** Every <a data-wa="key"> gets a ready-written WhatsApp message in the current language. */
@@ -133,18 +111,7 @@ function renderServices() {
   }).join('');
 
   applyWaLinks(grid);
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  grid.querySelectorAll('.service-card').forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(50px) scale(0.96)';
-    el.style.filter = 'blur(4px)';
-    el.style.transition = 'opacity .8s cubic-bezier(0.16,1,0.3,1), transform .8s cubic-bezier(0.16,1,0.3,1), filter .8s cubic-bezier(0.16,1,0.3,1)';
-    el.style.transitionDelay = (i % 6) * 0.08 + 's';
-    obs.observe(el);
-  });
+  // Reveals handled by animations.js (data-reveal)
 }
 
 function renderShop() {
@@ -181,24 +148,7 @@ function renderShop() {
   }).join('');
 
   applyWaLinks(grid);
-
-  // re-observe new cards with spectacular reveal
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  grid.querySelectorAll('.product-card').forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(50px) scale(0.96)';
-    el.style.filter = 'blur(4px)';
-    el.style.transition = 'opacity .8s cubic-bezier(0.16,1,0.3,1), transform .8s cubic-bezier(0.16,1,0.3,1), filter .8s cubic-bezier(0.16,1,0.3,1)';
-    el.style.transitionDelay = (i % 6) * 0.08 + 's';
-    obs.observe(el);
-  });
+  // Reveals handled by animations.js (data-reveal)
 }
 
 /* Testimonials carousel: swipe / arrows / dots / gentle autoplay */
@@ -255,6 +205,13 @@ function applySocialLinks() {
   if (typeof EL_TRONO === 'undefined' || !EL_TRONO.social) return;
   document.querySelectorAll('[data-social]').forEach(a => {
     const url = EL_TRONO.social[a.dataset.social];
-    if (url) { a.href = url; } else { a.setAttribute('href', '#'); a.addEventListener('click', e => e.preventDefault()); }
+    if (url) {
+      a.href = url;
+    } else {
+      // Sin URL configurada: ocultar el enlace (evita href="#")
+      a.style.display = 'none';
+      a.setAttribute('aria-hidden', 'true');
+      a.removeAttribute('href');
+    }
   });
 }

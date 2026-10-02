@@ -14,8 +14,15 @@ const EL_TRONO = {
     mapsUrl: 'https://www.google.com/maps?q=22.421887,-83.701554',
     mapsEmbed: 'https://maps.google.com/maps?q=22.421887,-83.701554&z=15&output=embed',
     hours: {
-      es: 'Lunes a Sábado: 9:00 am – 5:00 pm · Domingo: consultar',
-      en: 'Monday to Saturday: 9:00 AM – 5:00 PM · Sunday: please inquire'
+      es: 'Lunes a Sábado: 9:00 am – 7:00 pm · Domingo: consultar',
+      en: 'Monday to Saturday: 9:00 AM – 7:00 PM · Sunday: please inquire'
+    },
+    address: {
+      locality: 'Pinar del Río',
+      region: 'Pinar del Río',
+      country: 'CU',
+      countryName: 'Cuba',
+      full: 'Pinar del Río, Cuba'
     }
   },
   social: {

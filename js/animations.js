@@ -179,14 +179,16 @@
     // Auto-apply data-reveal to common elements if not already present
     const autoSelectors = [
       { sel: '.section-header', type: 'up' },
-      // service-card & product-card are handled by main.js with .visible
+      { sel: '.service-card', type: 'up' },
+      { sel: '.product-card', type: 'scale' },
       { sel: '.barber-card', type: 'scale' },
       { sel: '.gallery-item', type: 'scale' },
       { sel: '.contact-card', type: 'left' },
       { sel: '.testi-header', type: 'up' },
       { sel: '.promo-strip', type: 'fade' },
       { sel: '.footer .container > div', type: 'up' },
-      { sel: '.benefit, .beneficio, .feature-item, .labor-card', type: 'up' }
+      { sel: '.benefit, .beneficio, .feature-item, .labor-card', type: 'up' },
+      { sel: '.about-content, .about-images', type: 'up' }
     ];
 
     autoSelectors.forEach(({ sel, type }) => {
@@ -226,6 +228,7 @@
       rootMargin: '0px 0px -40px 0px'
     });
 
+    window.__revealObs = obs;
     els.forEach(el => obs.observe(el));
   }
 
@@ -293,12 +296,36 @@
   }
 
   /* ============================================================
-     8. ENHANCED EXISTING REVEALS (from main.js)
-     Make sure product/service cards that main.js creates also get nice effects
+     8. DYNAMIC CARDS (services/products rendered by main.js)
+     Apply data-reveal + tilt after DOM injection
      ============================================================ */
+  function applyRevealTo(el, type, delayIdx) {
+    if (el.hasAttribute('data-reveal')) return;
+    el.setAttribute('data-reveal', type);
+    if (delayIdx != null && delayIdx < 8) {
+      el.setAttribute('data-reveal-delay', String(delayIdx + 1));
+    }
+    // Observe immediately
+    if (!window.__revealObs) return;
+    window.__revealObs.observe(el);
+  }
+
   function observeDynamicCards() {
-    // Re-run tilt after main.js renders cards
-    const observer = new MutationObserver(() => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(m => {
+        m.addedNodes.forEach(node => {
+          if (node.nodeType !== 1) return;
+          if (node.classList && node.classList.contains('service-card')) {
+            applyRevealTo(node, 'up', Array.from(node.parentElement.children).indexOf(node));
+          }
+          if (node.classList && node.classList.contains('product-card')) {
+            applyRevealTo(node, 'scale', Array.from(node.parentElement.children).indexOf(node));
+          }
+          // also check children
+          node.querySelectorAll && node.querySelectorAll('.service-card').forEach((el, i) => applyRevealTo(el, 'up', i));
+          node.querySelectorAll && node.querySelectorAll('.product-card').forEach((el, i) => applyRevealTo(el, 'scale', i));
+        });
+      });
       initTilt();
     });
 
@@ -307,7 +334,7 @@
       document.getElementById('shop-grid')
     ].filter(Boolean);
 
-    targets.forEach(t => observer.observe(t, { childList: true }));
+    targets.forEach(t => observer.observe(t, { childList: true, subtree: true }));
   }
 
   /* ============================================================
