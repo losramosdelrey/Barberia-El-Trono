@@ -1,10 +1,10 @@
 /**
  * El Trono — Service Worker (root scope)
  */
-const CACHE = 'el-trono-v11';
+const CACHE = 'el-trono-v13';
 const ASSETS = [
   './', 'inicio.html', 'servicios.html', 'tienda.html', 'galeria.html', 'nosotros.html', 'contacto.html', 'labor-estudiantil.html',
-  'css/styles.css', 'css/install.css', 'css/labor.css', 'css/promo.css',
+  'css/styles.css', 'css/install.css', 'css/labor.css', 'css/promo.css', 'css/page-hero.css',
   'js/main.js', 'js/i18n.js', 'js/data.js', 'js/precios.js', 'js/install.js', 'js/cursor.js', 'js/labor.js',
   'manifest.json',
   'icons/icon-192.png', 'icons/icon-512.png',

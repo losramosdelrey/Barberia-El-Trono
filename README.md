@@ -17,6 +17,7 @@ el-trono/
 ├── css/
 │   ├── styles.css
 │   ├── labor.css           → estilos de Labor Estudiantil
+│   ├── page-hero.css       → fondo con foto en el hero de las páginas interiores
 │   ├── promo.css           → promoción 50%: franja en inicio/nosotros, tarjetas en servicios
 │   └── install.css
 ├── js/
