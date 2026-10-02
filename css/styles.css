@@ -490,3 +490,14 @@ html.has-cursor input:not([type=checkbox]):not([type=radio]):not([type=submit]):
 .barber-photo img{width:auto;max-width:100%;height:100%;aspect-ratio:409/610;object-fit:cover;object-position:center bottom;
   -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 58%,transparent 100%),linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%);
   mask-image:linear-gradient(180deg,#000 0%,#000 58%,transparent 100%),linear-gradient(90deg,transparent 0%,#000 14%,#000 86%,transparent 100%)}
+
+/* Pie: con 7 enlaces, el último queda centrado en su fila */
+.footer-nav li:last-child:nth-child(3n+1){grid-column:2}
+
+/* Menú: con 7 enlaces, evita saltos de línea en pantallas medianas */
+.nav-link{white-space:nowrap}
+@media(min-width:993px) and (max-width:1180px){
+  .nav-menu{gap:16px}
+  .nav-link{font-size:.84rem}
+  .nav-cta{padding-inline:16px}
+}

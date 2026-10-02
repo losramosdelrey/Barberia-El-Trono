@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Nosotros | El Trono Barbería</title>
-  <meta name="description" content="Conoce Barbería El Trono: historia, valores y experiencia premium en Cuba.">
+  <title>Labor Estudiantil | El Trono Barbería</title>
+  <meta name="description" content="Cursos de barbería y peluquería en Barbería El Trono. Matricúlate por WhatsApp o correo.">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/install.css">
+  <link rel="stylesheet" href="css/labor.css">
 </head>
-<body data-title="title_nosotros">
+<body data-title="title_labor">
   <header class="header scrolled" id="header">
     <nav class="nav container">
       <a href="inicio.html" class="logo"><img src="images/logos/logo-mark.svg" alt="El Trono" class="logo-img"><span class="logo-text">El Trono</span></a>
@@ -27,8 +28,8 @@
         <li><a href="servicios.html" class="nav-link" data-i18n="nav_services">Servicios</a></li>
         <li><a href="tienda.html" class="nav-link" data-i18n="nav_shop">Tienda</a></li>
         <li><a href="galeria.html" class="nav-link" data-i18n="nav_gallery">Galería</a></li>
-        <li><a href="nosotros.html" class="nav-link active" data-i18n="nav_about">Nosotros</a></li>
-        <li><a href="labor-estudiantil.html" class="nav-link" data-i18n="nav_labor">Labor Estudiantil</a></li>
+        <li><a href="nosotros.html" class="nav-link" data-i18n="nav_about">Nosotros</a></li>
+        <li><a href="labor-estudiantil.html" class="nav-link active" data-i18n="nav_labor">Labor Estudiantil</a></li>
         <li><a href="contacto.html" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
       </ul>
       <div class="nav-right">
@@ -44,63 +45,88 @@
 
   <div class="page-hero">
     <div class="container">
-      <span class="section-tag" data-i18n="about_tag">Sobre Nosotros</span>
-      <h1><span data-i18n="about_title">El Trono: donde el hombre</span> <span class="gold" data-i18n="about_title_gold">reina</span></h1>
+      <span class="section-tag" data-i18n="labor_tag">Labor Estudiantil</span>
+      <h1><span data-i18n="labor_title">Aprende el oficio,</span> <span class="gold" data-i18n="labor_title_gold">corona tu futuro</span></h1>
     </div>
   </div>
 
-  <section class="about section">
-    <div class="container about-grid">
-      <div class="about-images">
-        <div class="about-img main">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=800&q=80" data-i18n-alt="alt_barber" alt="Barbero">
-        </div>
-        <div class="about-img secondary">
-          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80" data-i18n-alt="gallery_ambiance" alt="Ambiente">
-        </div>
-        <div class="about-badge">
-          <span class="badge-number">👑</span>
-          <span class="badge-text" data-i18n="about_badge">Experiencia Premium</span>
-        </div>
-      </div>
-      <div class="about-content">
-        <p data-i18n="about_p1">En Barbería El Trono combinamos la tradición de la barbería clásica con técnicas modernas y productos de alta calidad.</p>
-        <p data-i18n="about_p2">Somos un salón de belleza masculino dedicado a elevar tu imagen y confianza.</p>
-        <div class="about-features">
-          <div class="feature"><i class="fas fa-check-circle"></i><span data-i18n="about_f1">Profesionales certificados</span></div>
-          <div class="feature"><i class="fas fa-check-circle"></i><span data-i18n="about_f2">Productos premium</span></div>
-          <div class="feature"><i class="fas fa-check-circle"></i><span data-i18n="about_f3">Ambiente exclusivo</span></div>
-          <div class="feature"><i class="fas fa-check-circle"></i><span data-i18n="about_f4">Atención personalizada</span></div>
-        </div>
-        <div class="about-cta"><a href="contacto.html" class="btn btn-gold" data-i18n="about_cta">Conócenos más</a></div>
+  <section class="section">
+    <div class="container">
+      <p class="labor-intro" data-i18n="labor_intro"></p>
+      <h2 class="labor-heading" data-i18n="labor_courses_title">Nuestra oferta académica</h2>
+      <div class="course-grid">
+        <article class="course-card">
+          <img src="https://loremflickr.com/640/430/barbershop?lock=11" width="640" height="430" data-seed="labor-c1" alt="" loading="lazy">
+          <div class="course-body">
+            <h3 data-i18n="labor_c1_title"></h3>
+            <p data-i18n="labor_c1_text"></p>
+          </div>
+        </article>
+        <article class="course-card">
+          <img src="https://loremflickr.com/640/430/haircut?lock=12" width="640" height="430" data-seed="labor-c2" alt="" loading="lazy">
+          <div class="course-body">
+            <h3 data-i18n="labor_c2_title"></h3>
+            <p data-i18n="labor_c2_text"></p>
+          </div>
+        </article>
+        <article class="course-card">
+          <img src="https://loremflickr.com/640/430/barber,razor?lock=13" width="640" height="430" data-seed="labor-c3" alt="" loading="lazy">
+          <div class="course-body">
+            <h3 data-i18n="labor_c3_title"></h3>
+            <p data-i18n="labor_c3_text"></p>
+          </div>
+        </article>
+        <article class="course-card">
+          <img src="https://loremflickr.com/640/430/hairdresser?lock=14" width="640" height="430" data-seed="labor-c4" alt="" loading="lazy">
+          <div class="course-body">
+            <h3 data-i18n="labor_c4_title"></h3>
+            <p data-i18n="labor_c4_text"></p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="team section" id="barberos" aria-labelledby="team-heading">
+  <section class="section labor-enroll" id="matricula">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-i18n="team_tag">Nuestro equipo</span>
-        <h2 class="section-title" id="team-heading"><span data-i18n="team_title">Barberos de</span> <span class="gold" data-i18n="team_title_gold">estudio</span></h2>
-        <p class="section-desc" data-i18n="team_sub">Nuestros expertos están aquí para llevar tu estilo al siguiente nivel.</p>
-      </div>
-      <div class="team-grid">
-        <article class="barber-card">
-          <div class="barber-photo"><img src="images/equipo/alejandro-rivera.png" alt="Alejandro Rivera" loading="lazy"></div>
-          <div class="barber-info">
-            <h3 data-i18n="team_1_name">Alejandro Rivera</h3>
-            <p class="barber-role" data-i18n="team_1_role"></p>
-            <a href="#" data-wa="barber" data-wa-barber="Alejandro Rivera" class="btn btn-gold btn-sm barber-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="team_book">Reservar ahora</span></a>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="labor-enroll-text">
+            <h2 data-i18n="labor_enroll_title">Matricúlate hoy</h2>
+            <p data-i18n="labor_enroll_text"></p>
           </div>
-        </article>
-        <article class="barber-card">
-          <div class="barber-photo"><img src="images/equipo/daniel-cabrera.png" alt="Daniel Cabrera" loading="lazy"></div>
-          <div class="barber-info">
-            <h3 data-i18n="team_2_name">Daniel Cabrera</h3>
-            <p class="barber-role" data-i18n="team_2_role"></p>
-            <a href="#" data-wa="barber" data-wa-barber="Daniel Cabrera" class="btn btn-gold btn-sm barber-btn" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="team_book">Reservar ahora</span></a>
+          <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <div><h4>WhatsApp</h4><p><a href="#" data-wa="general" target="_blank" rel="noopener">+53 54293791</a></p></div>
           </div>
-        </article>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div><h4>Email</h4><p><a href="mailto:info@eltrono.cu">info@eltrono.cu</a></p></div>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <h3 data-i18n="labor_form_title">Formulario de matrícula</h3>
+          <form class="contact-form" id="labor-form">
+            <div class="form-group"><input type="text" name="name" autocomplete="name" data-i18n-placeholder="labor_name" placeholder="Nombre completo" required></div>
+            <div class="form-group"><input type="tel" name="phone" autocomplete="tel" data-i18n-placeholder="labor_phone" placeholder="Teléfono / WhatsApp" required></div>
+            <div class="form-group"><input type="email" name="email" autocomplete="email" data-i18n-placeholder="labor_email" placeholder="Email" required></div>
+            <div class="form-group">
+              <select name="course" required>
+                <option value="" data-i18n="labor_course">Curso de interés</option>
+                <option value="c1" data-i18n="labor_c1_title"></option>
+                <option value="c2" data-i18n="labor_c2_title"></option>
+                <option value="c3" data-i18n="labor_c3_title"></option>
+                <option value="c4" data-i18n="labor_c4_title"></option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-gold btn-full"><i class="fab fa-whatsapp"></i> <span data-i18n="labor_send_wa">Enviar por WhatsApp</span></button>
+              <button type="button" class="btn btn-outline btn-full" id="labor-email"><i class="fas fa-envelope"></i> <span data-i18n="labor_send_mail">Enviar por email</span></button>
+            </div>
+            <p class="form-note" data-i18n="labor_note"></p>
+            <p class="form-status" id="labor-status" role="status"></p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -199,6 +225,7 @@
   <script src="js/data.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/labor.js"></script>
   <script src="js/install.js"></script>
   <script src="js/cursor.js"></script>
 </body>

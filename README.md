@@ -13,8 +13,10 @@ el-trono/
 ├── galeria.html
 ├── nosotros.html
 ├── contacto.html
+├── labor-estudiantil.html  → cursos y matrícula (WhatsApp + email)
 ├── css/
 │   ├── styles.css
+│   ├── labor.css           → estilos de Labor Estudiantil
 │   └── install.css
 ├── js/
 │   ├── precios.js          → ★ PRECIOS de servicios y tienda (editar aquí)
@@ -22,6 +24,7 @@ el-trono/
 │   ├── i18n.js             → ES / EN
 │   ├── main.js
 │   ├── install.js          → PWA install
+│   ├── labor.js            → formulario de matrícula
 ├── images/
 │   ├── backgrounds/
 │   ├── servicios/
