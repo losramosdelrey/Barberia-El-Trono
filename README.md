@@ -52,12 +52,10 @@ el-trono/
 - **Pie de página:** logo + título centrados y navegación en cuadrícula 3 × 3
 - **WhatsApp:** todos los enlaces abren un mensaje ya redactado para la barbería, en el idioma elegido (ver `EL_TRONO.waMsg` en `js/data.js`)
 - **PWA:** manifest (abre en `inicio.html`) + service worker + banner y guía de instalación (iOS / Android)
-- **SEO:** sitemap, robots, Schema.org LocalBusiness (JSON-LD), Open Graph + Twitter Cards, canonical URLs (dominio: https://eltrono.cu)
+- **SEO:** sitemap, robots, schema LocalBusiness
 - **Formulario** → WhatsApp pre-rellenado
-- **Mapa** coords 22.421887, -83.701554 (Pinar del Río, Cuba)
+- **Mapa** coords 22.421887, -83.701554
 - **Tel:** +53 54293791
-- **Horario unificado:** Lunes a Sábado 9:00–19:00 · Domingo consultar
-- **Animaciones:** lógica unificada en `js/animations.js` (sin conflictos con `main.js`)
 
 ## Uso
 

@@ -11,18 +11,11 @@ const EL_TRONO = {
     whatsapp: '5354293791',
     lat: 22.421887,
     lng: -83.701554,
-    mapsUrl: 'https://www.google.com/maps?q=22.421887,-83.701554',
-    mapsEmbed: 'https://maps.google.com/maps?q=22.421887,-83.701554&z=15&output=embed',
+    mapsUrl: 'https://www.google.com/maps?q=22.421887,-83.701554&hl=es',
+    mapsEmbed: 'https://www.openstreetmap.org/export/embed.html?bbox=-83.706554%2C22.416887%2C-83.696554%2C22.426887&layer=mapnik&marker=22.421887%2C-83.701554',
     hours: {
-      es: 'Lunes a Sábado: 9:00 am – 7:00 pm · Domingo: consultar',
-      en: 'Monday to Saturday: 9:00 AM – 7:00 PM · Sunday: please inquire'
-    },
-    address: {
-      locality: 'Pinar del Río',
-      region: 'Pinar del Río',
-      country: 'CU',
-      countryName: 'Cuba',
-      full: 'Pinar del Río, Cuba'
+      es: 'Lunes a Sábado: 9:00 am – 5:00 pm · Domingo: consultar',
+      en: 'Monday to Saturday: 9:00 AM – 5:00 PM · Sunday: please inquire'
     }
   },
   social: {

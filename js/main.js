@@ -66,6 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   applyWaLinks();
   applySocialLinks();
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.service-card, .product-card, .gallery-item, .contact-card, .about-content, .about-images, .barber-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .55s ease, transform .55s ease';
+    obs.observe(el);
+  });
+
+  const style = document.createElement('style');
+  style.textContent = '.visible{opacity:1!important;transform:translateY(0)!important}';
+  document.head.appendChild(style);
 });
 
 /** Every <a data-wa="key"> gets a ready-written WhatsApp message in the current language. */
@@ -111,7 +131,16 @@ function renderServices() {
   }).join('');
 
   applyWaLinks(grid);
-  // Reveals handled by animations.js (data-reveal)
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  grid.querySelectorAll('.service-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .55s ease, transform .55s ease';
+    obs.observe(el);
+  });
 }
 
 function renderShop() {
@@ -148,7 +177,22 @@ function renderShop() {
   }).join('');
 
   applyWaLinks(grid);
-  // Reveals handled by animations.js (data-reveal)
+
+  // re-observe new cards
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  grid.querySelectorAll('.product-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .55s ease, transform .55s ease';
+    obs.observe(el);
+  });
 }
 
 /* Testimonials carousel: swipe / arrows / dots / gentle autoplay */
@@ -207,11 +251,14 @@ function applySocialLinks() {
     const url = EL_TRONO.social[a.dataset.social];
     if (url) {
       a.href = url;
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
     } else {
-      // Sin URL configurada: ocultar el enlace (evita href="#")
-      a.style.display = 'none';
+      a.setAttribute('href', '#');
       a.setAttribute('aria-hidden', 'true');
-      a.removeAttribute('href');
+      a.setAttribute('tabindex', '-1');
+      a.style.display = 'none';
+      a.addEventListener('click', e => e.preventDefault());
     }
   });
 }
