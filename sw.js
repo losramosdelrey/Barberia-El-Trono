@@ -1,7 +1,7 @@
 /**
  * El Trono — Service Worker (root scope)
  */
-const CACHE = 'el-trono-v10';
+const CACHE = 'el-trono-v11';
 const ASSETS = [
   './', 'inicio.html', 'servicios.html', 'tienda.html', 'galeria.html', 'nosotros.html', 'contacto.html', 'labor-estudiantil.html',
   'css/styles.css', 'css/install.css', 'css/labor.css', 'css/promo.css',

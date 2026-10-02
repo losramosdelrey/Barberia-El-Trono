@@ -17,7 +17,7 @@ el-trono/
 ├── css/
 │   ├── styles.css
 │   ├── labor.css           → estilos de Labor Estudiantil
-│   ├── promo.css           → promoción 50% (inicio y servicios)
+│   ├── promo.css           → promoción 50%: franja en inicio/nosotros, tarjetas en servicios
 │   └── install.css
 ├── js/
 │   ├── precios.js          → ★ PRECIOS de servicios y tienda (editar aquí)
