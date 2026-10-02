@@ -1,0 +1,20 @@
+/* Promoción 50%: reutiliza los tokens de styles.css (:root) */
+.promo{background:linear-gradient(180deg,var(--bg) 0%,#0f0f0f 100%);scroll-margin-top:80px}
+.promo-head{text-align:center;max-width:720px;margin:0 auto 44px}
+.promo-head h2{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.6rem)}
+.promo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:920px;margin:0 auto}
+.promo-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:34px 28px;background:linear-gradient(160deg,#1a1608 0%,var(--bg-card) 100%);border:2px solid var(--gold-l);border-radius:10px;box-shadow:0 8px 26px rgba(0,0,0,.35)}
+.promo-off{position:absolute;top:-14px;right:20px;padding:5px 16px;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#0a0a0a;font-size:.8rem;font-weight:700;letter-spacing:1px;border-radius:20px}
+.promo-card .service-icon{margin-bottom:0}
+.promo-card h3{font-family:var(--font-d);font-size:1.3rem;margin:0}
+.promo-card p{color:var(--muted);font-size:.95rem;margin:0}
+.promo-chips{display:flex;flex-wrap:wrap;gap:8px}
+.promo-chips>span{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;font-size:.82rem;color:var(--gold);border:1px solid rgba(201,162,39,.45);border-radius:20px}
+.promo-card .btn{margin-top:auto}
+.promo-note{margin:28px 0 0;text-align:center;color:var(--muted);font-size:.85rem}
+
+/* Franja compacta (página de servicios) */
+.promo-strip{background:linear-gradient(90deg,#1a1608,#141414);border-block:1px solid rgba(201,162,39,.4)}
+.promo-strip-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 24px;padding-block:14px}
+.promo-strip p{margin:0;font-weight:500}
+.promo-strip i{color:var(--gold);margin-right:8px}
