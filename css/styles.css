@@ -1,30 +1,3 @@
-
-/* font-display + metric overrides (mitigate CLS on swap) */
-@font-face{
-  font-family:'Montserrat';
-  font-style:normal;font-weight:400 700;
-  font-display:swap;
-  src:local('Montserrat');
-  size-adjust:100%;
-  ascent-override:95%;
-  descent-override:25%;
-  line-gap-override:0%;
-}
-@font-face{
-  font-family:'Playfair Display';
-  font-style:normal;font-weight:400 700;
-  font-display:swap;
-  src:local('Playfair Display');
-  size-adjust:105%;
-  ascent-override:90%;
-  descent-override:22%;
-}
-@font-face{
-  font-family:'Great Vibes';
-  font-style:normal;font-weight:400;
-  font-display:optional;
-  src:local('Great Vibes');
-}
 /* El Trono — Main Styles */
 :root {
   --bg: #0a0a0a;
@@ -39,9 +12,9 @@
   --shadow: 0 20px 60px rgba(0,0,0,.5);
   --radius: 16px;
   --tr: .35s cubic-bezier(.4,0,.2,1);
-  --font-d: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-script: 'Great Vibes', 'Segoe Script', 'Apple Chancery', cursive;
-  --font-b: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-d: 'Playfair Display', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-b: 'Montserrat', sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -92,7 +65,7 @@ ul{list-style:none}
 /* Hero */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0}
-.hero-img{width:100%;height:100%;object-fit:cover}
+.hero-img{width:100%;height:100%;object-fit:cover;animation:slowZoom 20s ease-in-out infinite alternate}
 @keyframes slowZoom{from{transform:scale(1.05)}to{transform:scale(1.12)}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.82) 100%)}
 .hero-content{position:relative;z-index:2;text-align:center;max-width:800px;padding:120px 0 80px}
@@ -593,10 +566,5 @@ html.has-cursor input:not([type=checkbox]):not([type=radio]):not([type=submit]):
 /* Prefer GPU for hero image paint */
 .hero-img {
   will-change: auto;
-}
-
-
-/* Faster first paint: optional metric overrides when webfonts load */
-@supports (font-size-adjust: 1) {
-  body { font-size-adjust: 0.5; }
+  content-visibility: auto;
 }
