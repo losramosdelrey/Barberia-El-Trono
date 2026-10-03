@@ -27,6 +27,7 @@ el-trono/
 │   ├── main.js
 │   ├── install.js          → PWA install
 │   ├── labor.js            → formulario de matrícula
+│   ├── cursor.js
 ├── images/
 │   ├── backgrounds/
 │   ├── servicios/
@@ -56,6 +57,7 @@ el-trono/
 - **Formulario** → WhatsApp pre-rellenado
 - **Mapa** coords 22.421887, -83.701554
 - **Tel:** +53 54293791
+- **Dirección:** Calle Norte No. 58, Pinar del Río, Cuba (se edita en `js/i18n.js` → `contact_location_txt` y en `js/data.js` → `contact.address`)
 
 ## Uso
 

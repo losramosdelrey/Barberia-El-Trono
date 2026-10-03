@@ -2,7 +2,7 @@
   "id": "./inicio.html",
   "name": "Barbería El Trono",
   "short_name": "El Trono",
-  "description": "Barbería y salón de belleza masculino en Cuba. Cortes, afeitados y tratamientos premium.",
+  "description": "Barbería y salón de belleza masculino en Pinar del Río, Cuba. Cortes, afeitados y tratamientos premium.",
   "start_url": "./inicio.html?source=pwa",
   "scope": "./",
   "display": "standalone",

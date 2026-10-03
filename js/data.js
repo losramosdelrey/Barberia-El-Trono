@@ -9,6 +9,11 @@ const EL_TRONO = {
     phoneDisplay: '+53 54293791',
     email: 'info@eltrono.cu',
     whatsapp: '5354293791',
+    address: {
+      street: 'Calle Norte No. 58',
+      city: 'Pinar del Río',
+      country: { es: 'Cuba', en: 'Cuba' }
+    },
     lat: 22.421887,
     lng: -83.701554,
     mapsUrl: 'https://www.google.com/maps?q=22.421887,-83.701554&hl=es',
@@ -150,7 +155,7 @@ EL_TRONO.waMsg = {
     "afeitado": "I'd like to book an appointment for a *Shave*. What times do you have available?",
     "fibra": "I'd like information about the *Hair Fiber* service: what does it involve and how much does it cost?",
     "masaje": "I'd like to book a *Facial & Scalp Massage*. What times do you have available?",
-    "cejas": "I'd like to book *Exfoliation & Brows*. What times do you have available?",
+    "cejas": "I'd like to book *Facial Exfoliation & Brows*. What times do you have available?",
     "products": "I'd like to ask about the products in your shop and their prices.",
     "product": "I'd like to buy the product *{product}*. Is it available and what is the price?",
     "barber": "I'd like to book an appointment with *{barber}*. What times do you have available?",
@@ -192,7 +197,8 @@ EL_TRONO.waUrl = function (key, vars, lang) {
 EL_TRONO.fmtGroup = function (n) {            // 11250 -> "11.250"
   return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 };
-EL_TRONO.priceService = function (price) {    // 0 -> "0.00 CUP" | 'texto' -> 'texto'
+EL_TRONO.priceService = function (price) {    // 0 -> "Consultar" | 150 -> "150.00 CUP" | 'texto' -> 'texto'
+  if (price === 0) return (typeof Lang !== 'undefined' ? Lang.t('price_consult') : 'Consultar');
   if (typeof price === 'number') return price.toFixed(2) + ' CUP';
   return String(price == null ? '' : price);
 };

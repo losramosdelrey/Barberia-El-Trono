@@ -32,7 +32,7 @@ const I18N = {
     labor_form_title: "Formulario de matrícula",
     labor_name: "Nombre completo",
     labor_phone: "Teléfono / WhatsApp",
-    labor_email: "Email",
+    labor_email: "Correo electrónico",
     labor_course: "Curso de interés",
     labor_send_wa: "Enviar por WhatsApp",
     labor_send_mail: "Enviar por email",
@@ -49,7 +49,7 @@ const I18N = {
     promo_first_title: "Primera visita",
     promo_first_text: "Si nos visitas por primera vez para disfrutar de nuestros servicios, tienes un 50% de descuento.",
     promo_event_title: "Momentos especiales",
-    promo_event_text: "Si estás de cumpleaños, próximo a casarte o celebrando una reconciliación con tu pareja, también tienes un 50% de descuento.",
+    promo_event_text: "Si estás de cumpleaños, a punto de casarte o celebrando una reconciliación con tu pareja, también tienes un 50% de descuento.",
     promo_chip_bday: "Cumpleaños",
     promo_chip_wedding: "Boda",
     promo_chip_love: "Reconciliación",
@@ -78,7 +78,7 @@ const I18N = {
     service_afeitado: 'Afeitado',
     service_fibra: 'Fibra Capilar',
     service_masaje: 'Masaje Facial y Capilar',
-    service_cejas: 'Exfoliación & Cejas',
+    service_cejas: 'Exfoliación y Cejas',
     service_popular: 'Popular',
     service_book: 'Reservar →',
     service_consult: 'Consultar →',
@@ -140,7 +140,7 @@ const I18N = {
     contact_title: 'Visítanos o',
     contact_title_gold: 'reserva tu cita',
     contact_location: 'Ubicación',
-    contact_location_txt: 'Barbería El Trono<br>Salón de belleza masculino<br>Cuba',
+    contact_location_txt: 'Barbería El Trono<br>Salón de belleza masculino<br>Calle Norte No. 58<br>Pinar del Río, Cuba',
     contact_maps: 'Ver en Google Maps →',
     contact_phone: 'Teléfono / Móvil',
     contact_wa: 'WhatsApp',
@@ -161,7 +161,7 @@ const I18N = {
     footer_contact: 'Contacto',
     footer_terms: 'Términos de uso',
     footer_privacy: 'Privacidad',
-    footer_copy: '© 2026 Sitio web creado por MSc. Reynaldo Ramos. Todos los derechos reservados. Pinar del Río, Cuba.',
+    footer_copy: '© {year} Sitio web creado por MSc. Reynaldo Ramos. Todos los derechos reservados. Pinar del Río, Cuba.',
     // Float / Install
     float_email: 'Email',
     float_call: 'Llamar',
@@ -237,7 +237,7 @@ const I18N = {
     testi_1: 'Llegué con un corte que no sabía cómo arreglar y salí con el mejor fade de mi vida. Precisión, buen trato y un ambiente que te hace sentir como en casa.',
     testi_1_by: 'Carlos M.',
     testi_2: 'El afeitado con navaja y toalla caliente es una experiencia aparte. Salí relajado y con la piel perfecta. Ya es mi cita fija de cada semana.',
-    testi_2_by: 'Jersey H. Pineda.',
+    testi_2_by: 'Jercey H. Pineda',
     testi_3: 'Profesionales de verdad. Me asesoraron con el diseño de mi barba y los productos que me recomendaron funcionan de maravilla. Totalmente recomendado.',
     testi_3_by: 'Daniel P.',
     testi_role: 'Cliente en El Trono',
@@ -245,15 +245,24 @@ const I18N = {
     testi_next: 'Opinión siguiente',
     testi_go: 'Ver opinión',
     team_tag: 'Nuestro equipo',
-    team_title: 'Barberos de',
-    team_title_gold: 'estudio',
+    team_title: 'Conoce a nuestros',
+    team_title_gold: 'barberos',
     team_sub: 'Nuestros expertos están aquí para llevar tu estilo al siguiente nivel.',
-    team_1_name: 'Jersey H. Pineda',
-    team_1_role: 'Maestro Barbero y Fundador',
+    team_1_name: 'Jercey H. Pineda',
+    team_1_role: 'Maestro barbero y fundador',
     team_2_name: 'Daniel Cabrera',
-    team_2_role: 'Barbero Especialista en Fade y Barba',
+    team_2_role: 'Barbero especialista en Fade y barba',
     team_book: 'Reservar ahora',
-    install_later: 'Ahora no'
+    install_later: 'Ahora no',
+    skip_link: 'Saltar al contenido principal',
+    aria_book_wa: 'Reservar por WhatsApp (se abre en una pestaña nueva)',
+    aria_maps: 'Ver en Google Maps (se abre en una pestaña nueva)',
+    new_tab: '(se abre en una pestaña nueva)',
+    map_title: 'Mapa con la ubicación de Barbería El Trono',
+    aria_facebook: 'Facebook (se abre en una pestaña nueva)',
+    aria_twitter: 'Twitter (se abre en una pestaña nueva)',
+    aria_instagram: 'Instagram (se abre en una pestaña nueva)',
+    price_consult: 'Consultar'
   },
   en: {
     nav_home: 'Home',
@@ -263,13 +272,13 @@ const I18N = {
     nav_about: 'About',
     nav_contact: 'Contact',
     nav_book: 'Book Now',
-    // Student Work
-    nav_labor: "Student Work",
-    title_labor: "Student Work | El Trono Barbershop",
-    labor_tag: "Student Work",
+    // Student Training
+    nav_labor: "Student Training",
+    title_labor: "Student Training | El Trono Barbershop",
+    labor_tag: "Student Training",
     labor_title: "Learn the craft,",
     labor_title_gold: "crown your future",
-    labor_intro: "At Barbería El Trono we believe a good trade changes lives. With Student Work we offer hands-on barbering and hairdressing training, led by professionals and designed for those who want to start a career or sharpen their technique. You will learn from the fundamentals to current styles, with real tools and plenty of practice. Choose your course and take the first step.",
+    labor_intro: "At Barbería El Trono we believe a good trade changes lives. With our Student Training program we offer hands-on barbering and hairdressing instruction, led by professionals and designed for those who want to start a career or sharpen their technique. You will learn everything from the fundamentals to current styles, with real tools and plenty of practice. Choose your course and take the first step.",
     labor_courses_title: "Our courses",
     labor_c1_title: "Traditional and modern barbering",
     labor_c1_text: "Classic methods and current trends, so you can serve any client.",
@@ -280,7 +289,7 @@ const I18N = {
     labor_c4_title: "Hairdressing",
     labor_c4_text: "Core hairdressing techniques to deliver a professional service.",
     labor_enroll_title: "Enroll today",
-    labor_enroll_text: "Fill in the form. We receive your request by WhatsApp and by email, and we contact you to confirm your enrollment.",
+    labor_enroll_text: "Fill out the form. We receive your request by WhatsApp and by email, and we will contact you to confirm your enrollment.",
     labor_form_title: "Enrollment form",
     labor_name: "Full name",
     labor_phone: "Phone / WhatsApp",
@@ -288,11 +297,11 @@ const I18N = {
     labor_course: "Course of interest",
     labor_send_wa: "Send via WhatsApp",
     labor_send_mail: "Send via email",
-    labor_note: "So your enrollment doesn't get lost, send the request through both channels.",
+    labor_note: "To make sure your enrollment is not lost, send your request through both channels.",
     labor_ok_wa: "We opened WhatsApp with your details. Tap send in the app to finish.",
     labor_ok_mail: "We opened your email with your details. Press send to finish.",
-    labor_wa_intro: "I would like to enroll in *Student Work*. Here are my details:",
-    labor_mail_subject: "Student Work enrollment",
+    labor_wa_intro: "I would like to enroll in *Student Training*. Here are my details:",
+    labor_mail_subject: "Student Training enrollment",
     // Promoción
     promo_tag: "Promotion",
     promo_title: "Enjoy a",
@@ -301,7 +310,7 @@ const I18N = {
     promo_first_title: "First visit",
     promo_first_text: "If you visit us for the first time to enjoy our services, you get a 50% discount.",
     promo_event_title: "Special moments",
-    promo_event_text: "If it's your birthday, you're about to get married or celebrating a reconciliation with your partner, you also get a 50% discount.",
+    promo_event_text: "If it's your birthday, you're about to get married, or you're celebrating a reconciliation with your partner, you also get a 50% discount.",
     promo_chip_bday: "Birthday",
     promo_chip_wedding: "Wedding",
     promo_chip_love: "Reconciliation",
@@ -319,7 +328,7 @@ const I18N = {
     services_title: 'The art of',
     services_title_gold: 'premium barbering',
     services_hours_title: 'Hours',
-    services_hours_1: 'Monday to Saturday: 9:00 am – 5:00 pm',
+    services_hours_1: 'Monday to Saturday: 9:00 AM – 5:00 PM',
     services_hours_2: 'Sunday: please inquire',
     social_label: 'Social media',
     services_desc: 'Every service is designed to enhance your style and confidence with the highest professional quality.',
@@ -345,7 +354,7 @@ const I18N = {
     about_badge: 'Premium Experience',
     shop_tag: 'Shop',
     shop_title: 'Products for the',
-    shop_title_gold: 'man who cares',
+    shop_title_gold: 'well-groomed man',
     shop_desc: 'Men\'s grooming products, professional tools and personal care available at El Trono.',
     shop_cta: 'Looking for something specific? Contact us on WhatsApp and we\'ll advise you.',
     shop_cta_btn: 'Ask About Products',
@@ -386,7 +395,7 @@ const I18N = {
     contact_title: 'Visit us or',
     contact_title_gold: 'book your appointment',
     contact_location: 'Location',
-    contact_location_txt: 'Barbería El Trono<br>Men\'s grooming salon<br>Cuba',
+    contact_location_txt: 'Barbería El Trono<br>Men\'s grooming salon<br>Calle Norte No. 58<br>Pinar del Río, Cuba',
     contact_maps: 'View on Google Maps →',
     contact_phone: 'Phone / Mobile',
     contact_wa: 'WhatsApp',
@@ -406,7 +415,7 @@ const I18N = {
     footer_contact: 'Contact',
     footer_terms: 'Terms of Use',
     footer_privacy: 'Privacy',
-    footer_copy: '© 2026 Website created by MSc. Reynaldo Ramos. All rights reserved. Pinar del Río, Cuba.',
+    footer_copy: '© {year} Website created by MSc. Reynaldo Ramos. All rights reserved. Pinar del Río, Cuba.',
     float_email: 'Email',
     float_call: 'Call',
     float_app: 'App',
@@ -481,7 +490,7 @@ const I18N = {
     testi_1: 'I came in with a cut I had no idea how to fix and left with the best fade of my life. Precision, great service and an atmosphere that makes you feel at home.',
     testi_1_by: 'Carlos M.',
     testi_2: 'The straight-razor shave with a hot towel is an experience of its own. I left relaxed with perfect skin. It\'s now my regular weekly appointment.',
-    testi_2_by: 'Jersey H. Pineda.',
+    testi_2_by: 'Jercey H. Pineda',
     testi_3: 'True professionals. They advised me on my beard design and the products they recommended work wonderfully. Highly recommended.',
     testi_3_by: 'Daniel P.',
     testi_role: 'Client at El Trono',
@@ -489,20 +498,29 @@ const I18N = {
     testi_next: 'Next review',
     testi_go: 'Show review',
     team_tag: 'Our team',
-    team_title: 'Studio',
-    team_title_gold: 'Barbers',
+    team_title: 'Meet our',
+    team_title_gold: 'barbers',
     team_sub: 'Our experts are here to take your style to the next level.',
     team_1_name: 'Jercey H. Pineda',
     team_1_role: 'Master Barber & Founder',
     team_2_name: 'Daniel Cabrera',
     team_2_role: 'Fade & Beard Specialist',
     team_book: 'Book now',
-    install_later: 'Not now'
+    install_later: 'Not now',
+    skip_link: 'Skip to main content',
+    aria_book_wa: 'Book via WhatsApp (opens in a new tab)',
+    aria_maps: 'View on Google Maps (opens in a new tab)',
+    new_tab: '(opens in a new tab)',
+    map_title: 'Map showing the location of Barbería El Trono',
+    aria_facebook: 'Facebook (opens in a new tab)',
+    aria_twitter: 'Twitter (opens in a new tab)',
+    aria_instagram: 'Instagram (opens in a new tab)',
+    price_consult: 'Inquire'
   }
 };
 
 const Lang = {
-  current: localStorage.getItem('eltrono_lang') || 'es',
+  current: (function () { try { return localStorage.getItem('eltrono_lang') || 'es'; } catch (e) { return 'es'; } })(),
 
   t(key) {
     const v = (I18N[this.current] && I18N[this.current][key]) || I18N.es[key] || key;
@@ -512,7 +530,7 @@ const Lang = {
   set(lang) {
     if (!I18N[lang]) return;
     this.current = lang;
-    localStorage.setItem('eltrono_lang', lang);
+    try { localStorage.setItem('eltrono_lang', lang); } catch (e) {}
     document.documentElement.lang = lang;
     this.apply();
     document.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
@@ -528,6 +546,8 @@ const Lang = {
         el.textContent = val;
       }
     });
+    document.querySelectorAll('[data-i18n-title]').forEach(el => { el.setAttribute('title', this.t(el.getAttribute('data-i18n-title'))); });
+    document.querySelectorAll('a[href*="google.com/maps"]').forEach(a => { a.href = a.href.replace(/([?&]hl=)[a-z]{2}/, '$1' + this.current); });
     document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = this.t(el.getAttribute('data-i18n-alt')); });
     document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', this.t(el.getAttribute('data-i18n-aria'))); });
     if (document.body && document.body.dataset.title) document.title = this.t(document.body.dataset.title);
