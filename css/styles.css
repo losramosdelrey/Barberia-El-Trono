@@ -547,3 +547,24 @@ html.has-cursor input:not([type=checkbox]):not([type=radio]):not([type=submit]):
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+
+/* === Performance: contain off-screen sections === */
+.services,
+.testimonials,
+.team,
+.gallery,
+.about,
+.shop,
+.contact,
+.promo,
+.labor {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
+/* Prefer GPU for hero image paint */
+.hero-img {
+  will-change: auto;
+  content-visibility: auto;
+}

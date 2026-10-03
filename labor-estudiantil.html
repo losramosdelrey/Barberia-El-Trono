@@ -13,12 +13,15 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#c9a227">
   <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/page-hero.css">
-  <link rel="stylesheet" href="css/install.css">
-  <link rel="stylesheet" href="css/labor.css">
+  <link rel="stylesheet" href="css/install.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/install.css"></noscript>
+  <link rel="stylesheet" href="css/labor.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/labor.css"></noscript>
 </head>
 <body data-title="title_labor">
   <a href="#contenido-principal" class="skip-link" data-i18n="skip_link">Saltar al contenido principal</a>
@@ -37,8 +40,8 @@
       </ul>
       <div class="nav-right">
         <div class="lang-switch">
-          <button class="lang-btn active" data-lang="es" title="Español" aria-label="Español"><img src="images/flags/es.svg" alt="ES"></button>
-          <button class="lang-btn" data-lang="en" title="English" aria-label="English"><img src="images/flags/en.svg" alt="EN"></button>
+          <button class="lang-btn active" data-lang="es" title="Español" aria-label="Español"><img src="images/flags/es.svg" alt="ES" loading="lazy"></button>
+          <button class="lang-btn" data-lang="en" title="English" aria-label="English"><img src="images/flags/en.svg" alt="EN" loading="lazy"></button>
         </div>
         <a href="https://wa.me/5354293791?text=Hola%2C%20buen%20d%C3%ADa%20%F0%9F%91%8B%20Les%20escribo%20desde%20la%20p%C3%A1gina%20web%20de%20%2ABarber%C3%ADa%20El%20Trono%2A.%20Quisiera%20hacerles%20una%20consulta%2C%20por%20favor.%20Quedo%20atento%20a%20su%20respuesta.%20%C2%A1Gracias%21" data-wa="general" class="btn btn-gold nav-cta" target="_blank" rel="noopener noreferrer" data-i18n-aria="aria_book_wa" aria-label="Reservar por WhatsApp (se abre en una pestaña nueva)"><i class="fab fa-whatsapp"></i> <span data-i18n="nav_book">Reservar</span></a>
         <button class="nav-toggle" id="nav-toggle" data-i18n-aria="aria_menu" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -186,7 +189,7 @@
   <div class="install-banner" id="install-banner" role="dialog" aria-live="polite">
     <button type="button" class="install-close" onclick="elTronoInstallDismiss()" data-i18n-aria="install_close" aria-label="Cerrar"><i class="fas fa-xmark"></i></button>
     <div class="install-info">
-      <img src="icons/icon-192.png" alt="El Trono">
+      <img src="icons/icon-192.png" alt="El Trono" loading="lazy">
       <div>
         <h4 data-i18n="install_title">Instalar El Trono</h4>
         <p data-i18n="install_desc">Añade la app a tu pantalla de inicio para acceso rápido.</p>
@@ -202,7 +205,7 @@
   <div class="install-help" id="install-help" hidden>
     <div class="install-help-backdrop" onclick="elTronoInstallHelpClose()"></div>
     <div class="install-help-sheet" role="dialog" aria-modal="true">
-      <img src="icons/icon-192.png" alt="El Trono" class="ih-icon">
+      <img src="icons/icon-192.png" alt="El Trono" class="ih-icon" loading="lazy">
       <h3 data-i18n="install_help_title">Instala El Trono en tu teléfono</h3>
       <p class="ih-sub" data-i18n="install_help_sub">Acceso rápido desde tu pantalla de inicio, como una app.</p>
       <div class="ih-block" id="ih-ios" hidden>
@@ -226,12 +229,12 @@
   </div>
   <div class="install-toast" id="install-toast" role="status"></div>
 
-  <script src="js/precios.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/labor.js"></script>
-  <script src="js/install.js"></script>
-  <script src="js/cursor.js"></script>
+  <script defer src="js/precios.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/labor.js"></script>
+  <script defer src="js/install.js"></script>
+  <script defer src="js/cursor.js"></script>
 </body>
 </html>

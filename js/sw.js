@@ -1,7 +1,7 @@
 /**
  * El Trono — Service Worker (basic offline cache)
  */
-const CACHE = 'el-trono-v1';
+const CACHE = 'el-trono-v14';
 const ASSETS = [
   '/',
   '/inicio.html',
