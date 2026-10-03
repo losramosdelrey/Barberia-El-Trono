@@ -140,7 +140,7 @@ const I18N = {
     contact_title: 'Visítanos o',
     contact_title_gold: 'reserva tu cita',
     contact_location: 'Ubicación',
-    contact_location_txt: 'Barbería El Trono<br>Salón de belleza masculino<br>Calle Norte No. 58, cuidad Pinar del Río, Cuba',
+    contact_location_txt: 'Barbería El Trono<br>Salón de belleza masculino<br>Cuba',
     contact_maps: 'Ver en Google Maps →',
     contact_phone: 'Teléfono / Móvil',
     contact_wa: 'WhatsApp',
